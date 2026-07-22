@@ -14,6 +14,7 @@ Below are the key resources used and created during the research and development
 
 _Visit the [**GitHub Repository**](https://github.com/runeeyes584/TCG-AWS) to view the complete source code for the Chrono Genesis TCG serverless game project._
 
+[**Website Link**](https://dev.d3oenyc702mfnb.amplifyapp.com/)
 ---
 
 ### Product Demo Videos
