@@ -45,8 +45,6 @@ _Dịch vụ AWS sử dụng_
 
 - _Amazon Route 53_: Giao tiếp với ứng dụng web.
 
-- _Amazon S3_: Quản lý tên miền và định tuyến lưu lượng truy cập của người chơi đến ứng dụng.
-
 - _Amazon Cognito_: Xác thực danh tính người chơi, quản lý phiên đăng nhập và cấp phát JWT Token.
 
 - _Amazon API Gateway (WebSocket API)_: Quản lý kết nối thời gian thực hai chiều (real-time) giữa Client và Server.
