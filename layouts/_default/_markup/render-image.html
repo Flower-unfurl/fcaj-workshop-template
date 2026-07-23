@@ -1,5 +1,6 @@
-{{- $src := .Destination -}}
-{{- if and (strings.HasPrefix $src "/") (not (strings.HasPrefix $src "//")) -}}
-  {{- $src = strings.TrimPrefix "/" $src -}}
-{{- end -}}
-<img src="{{ $src | relURL | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+{{ $src := .Destination }}
+{{ if not (hasPrefix $src "http") }}
+  {{ $clean := strings.TrimPrefix "/" $src }}
+  {{ $src = $clean | relURL }}
+{{ end }}
+<img src="{{ $src }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} class="img-fluid" />

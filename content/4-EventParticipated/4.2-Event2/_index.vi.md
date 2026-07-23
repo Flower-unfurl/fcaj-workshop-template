@@ -7,79 +7,48 @@ pre: " <b> 4.2. </b> "
 ---
 
 
-# Bài thu hoạch “FCAJ Community Day”
+# Bài thu hoạch “FCAJ Community Day - Event 2”
 
 ### Mục Đích Của Sự Kiện
-
-- Sự kiện được tổ chức nhằm chia sẻ kiến thức chuyên sâu, kinh nghiệm thực chiến và các xu hướng công nghệ mới nhất về Cloud (AWS), Trí tuệ nhân tạo (AI), DevOps, phát triển game, cũng như định hướng phát triển sự nghiệp và kỹ năng làm việc nhóm trong ngành IT.
-
-### Danh Sách Diễn Giả
-
-- **Le Hoang Gia Dai** - Sinh viên năm cuối Đại học HUTECH
-- **Bao Huynh** - Junior Cloud Native Developer tại Endava Vietnam, Founder của ITea Lab
-- **Tran Trung Vinh** - System Administrator tại Central Retail Group
-- **NNguyen Quoc Bao** - Diễn giả chủ đề Godot & AWS WebSockets
-- **Truong Huy Phuoc** - Diễn giả chủ đề Kỹ năng làm việc nhóm
-- **Viet Phat** - Sinh viên chuyên ngành AI tại Đại học Swinburne
+- Sự kiện được tổ chức nhằm chia sẻ kiến thức thực chiến, định hướng phát triển sự nghiệp và trải nghiệm các công cụ học tập, công nghệ hiện đại trong hệ sinh thái AWS và AI.
 
 ### Nội Dung Nổi Bật
 
-#### AWS WAF & ML NIDS
-- Kết hợp Tường lửa ứng dụng web (AWS WAF) với Hệ thống phát hiện xâm nhập mạng bằng Machine Learning (NIDS) để khắc phục hạn chế của các rule truyền thống, giúp phát hiện các cuộc tấn công chưa từng có dựa trên hành vi mạng.
-- Huấn luyện mô hình với tập dữ liệu CSE-CIC-IDS2018 và kiến trúc triển khai trên AWS.
+#### 1. Công cụ hỗ trợ thực hành Floci và game mô phỏng 3D về các flow ứng dụng AWS
+- **Diễn giả:** Huỳnh Thái Linh
+- Giới thiệu công cụ hỗ trợ thực hành Floci kết hợp với mô hình game 3D tương tác (như AWS Cloud Quest), mô phỏng trực quan các flow kiến trúc ứng dụng và cách phối hợp các dịch vụ AWS.
+- Người tham dự được trải nghiệm cách triển khai hạ tầng, cấu hình mạng và quản lý dịch vụ đám mây thông qua các thử thách gamification 3D sinh động, giúp biến các khái niệm lý thuyết trừu tượng thành thao tác thực hành dễ hiểu.
 
-#### Docker
-- Giới thiệu công nghệ Containerization (Docker) và so sánh với máy ảo (Virtualization) truyền thống.
-- Docker mang lại lợi ích nhẹ, chạy nhất quán trên nhiều môi trường và lý tưởng cho các kiến trúc Microservices hay CI/CD.
+#### 2. Trải nghiệm Hackathon: Dự án AI Voice Verification System
+- **Diễn giả:** Huỳnh Anh Khương, Minh Quân, Mai Quốc Anh (Thuyết trình Full English)
+- Lắng nghe phần chia sẻ đầy cảm hứng từ 3 diễn giả trình bày hoàn toàn bằng tiếng Anh về hành trình tham gia cuộc thi Hackathon với đề tài Hệ thống xác thực giọng nói bằng AI (AI Voice Verification System).
+- Các diễn giả đã phân tích cách xây dựng luồng xử lý tín hiệu âm thanh, trích xuất đặc trưng sinh trắc học giọng nói, ứng dụng mô hình AI để xác thực người dùng và cách phối hợp nhóm hiệu quả để hoàn thành sản phẩm dưới áp lực thời gian gay cấn của cuộc thi.
 
-#### Hành trình từ IT Helpdesk đến Senior Sysadmin
-- Chia sẻ kinh nghiệm thực tế khi thăng tiến trong nghề quản trị hệ thống, nhấn mạnh tầm quan trọng của việc hiểu biết Linux, Mạng, và tự động hóa.
-- Cung cấp lộ trình hướng tới DevOps/Cloud, bao gồm Git, Terraform, Docker, Kubernetes và tư duy vận hành.
+#### 3. Sự tự tin trong công việc và học tập
+- **Diễn giả:** Nguyễn Quỳnh Như
+- Diễn giả nhấn mạnh tầm quan trọng của việc xây dựng sự tự tin dựa trên năng lực cốt lõi và tinh thần không ngại mắc sai lầm.
+- Sự tự tin giúp lập trình viên và sinh viên chủ động tiếp cận công nghệ mới, sẵn sàng trình bày ý tưởng bằng ngoại ngữ và giao tiếp hiệu quả với đồng nghiệp, đối tác trong môi trường làm việc toàn cầu.
 
-#### Multiplayer trong Cloud với Godot 
-- Hướng dẫn xây dựng kiến trúc game nhiều người chơi bằng Godot 4 kết hợp với AWS WebSockets (API Gateway, Lambda, DynamoDB).
-- So sánh các kiến trúc mạng và chỉ ra những giới hạn của kiến trúc Serverless so với việc dùng máy chủ chuyên dụng như AWS GameLift.
+#### 4. Giới thiệu dự án Web & App về Tử Vi và số mệnh
+- Trình bày một sản phẩm thực tế độc đáo kết hợp giữa thuật toán truyền thống và công nghệ hiện đại: Ứng dụng Web & Mobile App về Tử vi & Số mệnh.
+- Dự án minh họa cách số hóa các quy luật lập lá số, xử lý và lưu trữ dữ liệu người dùng trên Cloud (AWS), đồng thời tối ưu hóa giao diện trải nghiệm người dùng (UX/UI) mượt mà và cá nhân hóa.
 
-#### GraphRAG Architecture
-- Giới thiệu phương pháp GraphRAG (Sử dụng đồ thị tri thức để cải thiện RAG), giúp mô hình AI có khả năng suy luận đa bước (multi-hop reasoning).
-- Hướng dẫn xây dựng GraphRAG trên AWS bằng 2 cách: quản lý toàn phần (Amazon Bedrock, Neptune Analytics) hoặc tự xây dựng (LlamaIndex, Amazon Neptune).
-
-#### Nghệ thuật làm việc nhóm
-- Đề xuất 4 nguyên tắc trong làm việc nhóm: Mục tiêu rõ ràng và chung, Đúng người đúng việc, Giao tiếp cởi mở và Lắng nghe tích cực, Trách nhiệm cá nhân.
-- Gợi ý sử dụng các công cụ số như Trello, ClickUp, Slack, Discord để tối ưu hóa hiệu suất công việc.
+#### 5. Giải mã và vượt qua sự trì hoãn (Procrastination) trong công việc và học tập
+- Phân tích những nguyên nhân chính dẫn đến tâm lý trì hoãn trong quá trình học tập và làm dự án IT.
+- Đề xuất các giải pháp thực tế: Chia nhỏ mục tiêu lớn thành các task nhỏ (Chunking), áp dụng quy tắc 2 phút / Pomodoro và thiết lập kỷ luật cá nhân để duy trì động lực làm việc đều đặn.
 
 ### Những Gì Học Được
-
-- Em đã học được cách kiến trúc mạng và các dịch vụ đám mây (AWS) đang được ứng dụng rộng rãi trong nhiều lĩnh vực: từ bảo mật không gian mạng (NIDS), phát triển AI (GraphRAG), đến hạ tầng cho game (Multiplayer)
-- Về mặt hệ thống, em hiểu rõ sự ưu việt của Docker so với máy ảo thông thường và lộ trình từng bước để phát triển từ một kỹ thuật viên IT lên vị trí Kỹ sư Cloud/DevOps
-- Bên cạnh kỹ thuật, em cũng học được cách tư duy vận hành hệ thống, cách chuẩn bị phỏng vấn hiệu quả và các kỹ năng phối hợp nhóm
-
-
+- Nắm bắt được phương pháp học tập AWS trực quan qua game mô phỏng 3D (Cloud Quest/Floci) và mô hình hóa kiến trúc flow ứng dụng từ diễn giả Huỳnh Thái Linh.
+- Rút ra bài học thực chiến từ dự án AI Voice Verification System tại Hackathon từ 3 diễn giả Huỳnh Anh Khương, Minh Quân, Mai Quốc Anh, từ cách xử lý bài toán kỹ thuật AI đến kỹ năng thuyết trình tiếng Anh chuyên nghiệp.
+- Học được tư duy rèn luyện sự tự tin từ diễn giả Nguyễn Quỳnh Như, cách quản lý bản thân để chiến thắng sự trì hoãn và cách hiện thực hóa các ý tưởng ứng dụng sáng tạo (như dự án Tử Vi).
 
 ### Ứng Dụng Vào Công Việc
-- Sử dụng Docker: Ứng dụng Docker vào môi trường phát triển và kiểm thử, hoặc vào các luồng CI/CD để đảm bảo ứng dụng chạy đồng nhất trên mọi máy tính, tránh lỗi xung đột môi trường.
-- Cải thiện bảo mật: Cân nhắc tích hợp học máy (Machine learning) kết hợp với các dịch vụ tường lửa có sẵn để chủ động phân tích log và phát hiện các hành vi truy cập bất thường mà WAF thông thường không bắt được.
-- Nâng cao hiệu suất nhóm: Ứng dụng 4 nguyên tắc vàng và thiết lập các công cụ như Trello, Slack để quản lý tiến độ và thông tin liên lạc rõ ràng hơn trong team dự án.
+- Áp dụng các công cụ mô phỏng 3D và Floci vào quá trình tự học và thực hành các bài lab AWS.
+- Rèn luyện kỹ năng trình bày tiếng Anh và phương pháp làm việc nhóm theo mô hình Hackathon cho các dự án thực tế.
+- Xây dựng thói quen quản lý thời gian, chia nhỏ công việc để loại bỏ sự trì hoãn và gia tăng sự tự tin khi đảm nhận các nhiệm vụ mới.
 
 ### Trải nghiệm trong event
-
-Tham gia workshop **“FCAJ Community Day”** là một trải nghiệm rất bổ ích, giúp em có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Sự kiện mang lại cơ hội tiếp thu kiến thức từ các kỹ sư giàu kinh nghiệm thực chiến tại các doanh nghiệp lớn (như Central Retail Group, Endava) cũng như các sinh viên công nghệ tài năng, mang tới góc nhìn rất thực tế về lộ trình nghề nghiệp và công nghệ.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Các diễn giả đều có các minh họa rõ ràng như sơ đồ kiến trúc hệ thống trên AWS, bảng so sánh mô hình mạng, và cả phần Demo trực tiếp (Live Demonstration) cách kết nối hai luồng client trên Godot hay cách chạy Docker, giúp biến lý thuyết thành trải nghiệm trực quan.
-
-#### Ứng dụng công cụ hiện đại
-- Sự kiện giúp mở rộng tầm mắt với hàng loạt bộ công cụ và dịch vụ hiện đại bậc nhất hiện nay như AWS Bedrock, Neptune Analytics, AWS Lambda, DynamoDB, LlamaIndex, Docker, và Terraform.
-
-#### Kết nối và trao đổi
-- Xuyên suốt sự kiện, đặc biệt ở phần cuối các bài thuyết trình, đều có các chuyên mục hỏi đáp (Q&A) và mã QR để người tham dự có thể kết nối với diễn giả qua mạng xã hội (LinkedIn), tạo không gian giao lưu mạnh mẽ.
-
-#### Bài học rút ra
-- Những lời khuyên nghề nghiệp rất sâu sắc đã được rút ra: Kinh nghiệm thực tiễn quan trọng hơn chứng chỉ, chất lượng dữ liệu quyết định sự thành bại của hệ thống học máy, không học quá nhiều thứ cùng lúc mà hãy tập trung đào sâu 1-2 kỹ năng cốt lõi trước, và "dù bạn bắt đầu từ đâu không quan trọng, mọi bước tiến nhỏ đều có giá trị".
+- Sự kiện diễn ra trong không khí vô cùng sôi nổi và truyền cảm hứng. Các bài chia sẻ không chỉ mang tính kỹ thuật cao mà còn chạm đến những khía cạnh thực tế trong tâm lý học tập và phát triển bản thân.
 
 #### Một số hình ảnh khi tham gia sự kiện
 ![Event2](/images/4-Events/Event2.png)
-![Event2](/images/4-Events/Event2b.png)
