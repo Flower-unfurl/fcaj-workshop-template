@@ -38,3 +38,4 @@ chapter: false
 5.  [Workshop](5-Workshop/)
 6.  [Self-Evaluation](6-Self-evaluation/)
 7.  [Feedback & Contributions](7-Feedback/)
+8.  [Resources](8-Resources/)
