@@ -6,6 +6,14 @@
 (function () {
   'use strict';
 
+  // --- Helper: Detect current page language (vi vs en) ---
+  function getLanguage() {
+    const langAttr = document.documentElement.getAttribute('lang') || '';
+    if (langAttr.toLowerCase().startsWith('vi')) return 'vi';
+    if (window.location.pathname.includes('/vi/')) return 'vi';
+    return 'en';
+  }
+
   // --- 1. Ambient Dynamic Particle Canvas ---
   function initBackgroundCanvas() {
     const canvas = document.getElementById('framer-bg-canvas');
@@ -165,10 +173,14 @@
     });
   }
 
-  // --- 3. Collapsible Content / TOC Panel Enhancements ---
+  // --- 3. Collapsible Content / TOC Panel Enhancements with i18n Multilingual Support ---
   function initCollapsiblePanels() {
     const bodyInner = document.getElementById('body-inner');
     if (!bodyInner) return;
+
+    const isVi = getLanguage() === 'vi';
+    const txtCollapse = isVi ? 'Thu gọn' : 'Collapse';
+    const txtExpand = isVi ? 'Mở rộng' : 'Expand';
 
     const headings = bodyInner.querySelectorAll('h1, h2, h3, h4, h5');
     
@@ -195,7 +207,7 @@
               <span>${heading.textContent}</span>
             </div>
             <div class="collapsible-toggle-badge">
-              <span class="badge-text">Thu gọn</span>
+              <span class="badge-text">${txtCollapse}</span>
               <i class="fas fa-chevron-down collapsible-icon-arrow"></i>
             </div>
           `;
@@ -214,7 +226,7 @@
             const isCollapsed = panel.classList.toggle('collapsed');
             const badgeText = header.querySelector('.badge-text');
             if (badgeText) {
-              badgeText.textContent = isCollapsed ? 'Mở rộng' : 'Thu gọn';
+              badgeText.textContent = isCollapsed ? txtExpand : txtCollapse;
             }
           });
         }
@@ -222,11 +234,22 @@
     });
   }
 
-  // --- 4. Robust Sidebar Collapse / Expand Event Handler ---
+  // --- 4. Robust Sidebar Collapse / Expand Event Handler with i18n ---
   function initSidebarToggleEvents() {
+    const isVi = getLanguage() === 'vi';
     const toggleSelectors = '[data-sidebar-toggle], #sidebar-toggle, #sidebar-toggle-btn, #sidebar-expand-float-btn';
 
-    // Delegate click listener on document for maximum reliability
+    // Update titles for multilingual support
+    const sidebarBtn = document.getElementById('sidebar-toggle-btn');
+    if (sidebarBtn) {
+      sidebarBtn.title = isVi ? 'Thu / Phóng Sidebar' : 'Toggle Sidebar';
+    }
+
+    const expandFloatBtn = document.getElementById('sidebar-expand-float-btn');
+    if (expandFloatBtn) {
+      expandFloatBtn.title = isVi ? 'Mở rộng Sidebar' : 'Expand Sidebar';
+    }
+
     document.addEventListener('click', (e) => {
       const btn = e.target.closest(toggleSelectors);
       if (btn) {
@@ -240,7 +263,6 @@
       }
     });
 
-    // Restore user preference
     try {
       if (localStorage.getItem('hugo_sidebar_hidden') === 'true') {
         document.body.classList.add('sidebar-hidden');
