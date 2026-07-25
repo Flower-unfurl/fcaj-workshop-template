@@ -9,26 +9,23 @@ pre: " <b> 1.11. </b> "
 
 ### Week 11 Goals:
 
-* Convert the entire Game Engine into separate Lambda functions, package dependencies (Node.js), and upload to AWS Lambda.
-* Integrate KMS and Secrets Manager encryption services to secure DynamoDB connection credentials.
-* Finalize the ELO score calculation feature, handle match-exit scenarios, and optimize chessboard UI graphics.
+* Build and program the Business Logic Layer.  
+* Deploy specialized AWS Lambda functions to handle the match lifecycle, from the start, in-turn actions, to combat mechanics.
 
-### Tasks to Be Completed This Week:
-| Day | Task                                                                                                                                                                                                                                                                                              | Start Date   | End Date        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| Mon | Convert the engine structure into Lambda functions. <br> Bundle code + dependencies into a single JavaScript file (Node.js build), package, and upload to AWS Lambda.                                                                                                                            | 14/07/2026   | 14/07/2026      |
-| Tue | Build Lambda functions: Start Match, Process Game Engine, Save Deck, Handle Timeout, End Match, Connect Handler, Disconnect Handler. Build, compress into a zip file, and update on AWS Lambda.                                                                                                   | 15/07/2026   | 15/07/2026      |
-| Wed | Use KMS and Secrets Manager: the Secret Key borrows the database key from KMS to decrypt and returns a clean accessKey/secretAccessKey pair for Lambda to communicate with DynamoDB.                                                                                                              | 16/07/2026   | 16/07/2026      |
-| Thu | Refine the connection flow, handle ELO score increases/decreases when continuing or exiting a match.                                                                                                                                                                                              | 17/07/2026   | 17/07/2026      |
-| Fri | Add the hover card Tilt feature (card tilts according to mouse movement). <br> Add glowing board border and glowing nexus-panel effect for the priority turn player.                                                                                                                              | 18/07/2026   | 18/07/2026      |
+### Tasks to Complete This Week:
+| Day | Tasks                                                                                                                                                                          | Start Date   | End Date        | Reference |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | --------- |
+| 2   | - Write logic for matchmaking two players and initializing the match state <br>                                                                                                  | 13/07/2026   | 13/07/2026      |           |
+| 3   | - Develop the Lambda Save Deck function <br>                                                                                                                                     | 14/07/2026   | 14/07/2026      |           |
+| 4   | - Build the in-turn action processing flow <br>                                                                                                                                  | 15/07/2026   | 15/07/2026      |           |
+| 5   | - Develop Process Game Engine: Build the complete combat mechanics including: Attack, Counter-attack, and Skill effect activation... <br>                                         | 16/07/2026   | 16/07/2026      |           |
+| 6   | - Package business logic into a single Lambda function to control Miss Timing and prevent data overwriting when updating state to DynamoDB.                                      | 17/07/2026   | 17/07/2026      |           |
+
 
 ### Week 11 Results Achieved:
 
-* Packaged the Game Engine into specialized AWS Lambda functions (Start Match, Process Game Engine, Save Deck, Handle Timeout, End Match, Connect Handler, Disconnect Handler) running on a Node.js environment.
+* Successfully programmed and deployed Lambda Start Match, capable of handling matchmaking, initializing starting parameters, and recording state to DynamoDB.  
 
-* Successfully integrated AWS KMS and Secrets Manager: secured connection string credentials and safely decrypted the accessKey/secretAccessKey pair for Lambda to query DynamoDB without exposing sensitive information.
+* Completed the Lambda Save Deck function, enabling players to save and update their deck structure before entering a match.  
 
-* Finalized the algorithm to automatically calculate and update ELO ranking scores when a player wins, loses, or exits a match midway.
-
-* Enhanced the user interface experience: integrated a 3D card-tilt effect following the mouse cursor (Tilt card) and a glowing board area (nexus-panel) when it is the player's turn.
-
+* Merged all match business logic into a single Lambda function acting as the central Game Engine, resolving the data overwriting issue and successfully calling the API Gateway to broadcast board state to players via WebSocket.

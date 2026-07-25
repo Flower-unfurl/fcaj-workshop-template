@@ -8,17 +8,19 @@ pre: " <b> 8. </b> "
 
 Dưới đây là các tài nguyên quan trọng trong quá trình nghiên cứu và phát triển dự án.
 
-### Mã nguồn dự án
+### 1. Link dự án
+
+_Truy cập [**Chrono Genesis TCG Game**](https://dev.d3oenyc702mfnb.amplifyapp.com/) để xem chi tiết giao diện và chơi thử tính năng của game._
+
+### 2. Mã nguồn dự án
 
 [![TCG-AWS GitHub Repository](https://opengraph.githubassets.com/1/runeeyes584/TCG-AWS)](https://github.com/runeeyes584/TCG-AWS)
-
-[**Website**](https://dev.d3oenyc702mfnb.amplifyapp.com/)
 
 _Truy cập [**GitHub Repository**](https://github.com/runeeyes584/TCG-AWS) để xem mã nguồn đầy đủ của dự án game serverless Chrono Genesis TCG._
 
 ---
 
-### Video Demo Sản Phẩm
+### 3. Video Demo Sản Phẩm
 
 > Hãy sử dụng tai nghe hoặc âm thanh để có trải nghiệm tốt nhất!
 

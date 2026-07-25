@@ -9,26 +9,30 @@ pre: " <b> 1.6. </b> "
 
 ### Week 6 Goals:
 
-* Complete Module 5 theory on security models, identity and access management (Shared Responsibility Model, Cognito, AWS Organizations, KMS, Security Hub).
-* Practice labs on deploying containerized applications using the Amazon Lightsail Containers service.
+* Master the art of transforming monolithic applications into modern, scalable, cloud-native architectures.
+* Experience the hands-on modernization of a complete Java Spring Boot application, learning how to decompose a monolith, implement event-driven architecture, and leverage AWS managed services for maximum efficiency and scalability.  
+* Master Microservices architecture (service decomposition and bounded contexts), Serverless Computing, API-First design, and Event-driven systems.
 
-### Tasks to Be Completed This Week:
-| Day | Task                                                                                                                                                             | Start Date   | End Date        |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| Mon | Complete Module 5 theory (Sections 5.1 - 5.4: Shared Responsibility Model, IAM, Amazon Cognito, AWS Organizations).                                             | 09/06/2026   | 09/06/2026      |
-| Tue | 3rd onsite visit to the office. <br> Complete Module 5 theory (Sections 5.5 - 5.7: AWS Identity Center, KMS, AWS Security Hub).                                 | 10/06/2026   | 10/06/2026      |
-| Wed | Practice lab: Database Essentials with Amazon Relational Database Service (RDS).                                                                                 | 11/06/2026   | 11/06/2026      |
-| Thu | Practice lab: Simplified Computing with Amazon Lightsail.                                                                                                        | 12/06/2026   | 12/06/2026      |
-| Fri | Practice lab: Container Deployment with Amazon Lightsail Containers.                                                                                             | 13/06/2026   | 13/06/2026      |
+### Tasks to Complete This Week:
+| Day | Tasks                                                                                                                                                                                                                                                                                                                               | Start Date   | End Date        | Reference                                              |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ------------------------------------------------------ |
+| 2   | - Monolith Migration: Research documentation, analyze source code, and plan the decomposition from a monolithic application to a Cloud-Native architecture <br> - Practice setting up a basic CI/CD pipeline to automate application packaging and release <br> - Create a Microservice <br> - Practice data schema analysis <br>&emsp; + Use tools like Draw.io or Mermaid to visualize <br>&emsp; + Design workflows suitable for a distributed architecture | 08/06/2026   | 08/06/2026      | https://cloudjourney.awsstudygroup.com/vi/4-modernize/ |
+| 3   | - Research asynchronous communication mechanisms between Microservices via Event-driven patterns <br> - Practice initializing and integrating a security authentication system for an SPA <br> - Explore and experiment with AWS's built-in AI services to evaluate their applicability <br> - Get familiar with and design state machines (workflows) to orchestrate complex business processes <br> | 09/06/2026   | 09/06/2026      | https://cloudjourney.awsstudygroup.com/vi/4-modernize/ |
+| 4   | - Study and do Lab: Interact with S3 & DynamoDB <br> - Practice configuring the Frontend to call APIs via Amazon API Gateway <br> - Learn and use the AWS Serverless Application Model (SAM) <br>                                                                                                                                     | 10/06/2026   | 10/06/2026      | https://cloudjourney.awsstudygroup.com/vi/4-modernize/ |
+| 5   | - Study and do Lab: <br>&emsp; + Identity management, authorization, and user authentication with Amazon Cognito <br>&emsp; + Configure static website hosting on Amazon S3 with SSL/TLS security integration <br>&emsp; + Build an asynchronous order processing model by combining Amazon SQS queues and Amazon SNS messaging <br>   | 11/06/2026   | 11/06/2026      | https://cloudjourney.awsstudygroup.com/vi/4-modernize/ |
+| 6   | - Study and do Lab: <br>&emsp; + Build a CI/CD pipeline for Serverless applications with AWS CodePipeline <br>&emsp; + Configure performance monitoring, logging, and tracing for Lambda functions with Amazon CloudWatch and AWS X-Ray <br>&emsp; + Manage GraphQL APIs with AWS AppSync, optimizing data retrieval from multiple sources <br> | 12/06/2026   | 12/06/2026      | https://cloudjourney.awsstudygroup.com/vi/4-modernize/ |
+
 
 ### Week 6 Results Achieved:
+* Successfully decomposed a Monolith application, created Microservices, and restructured data/workflows.
 
-* Completed the 3rd onsite working session at the AWS office.
+* Grasped how to set up Microservice Messaging and Eventing, and began applying AWS Step Functions.
 
-* Absorbed Module 5 theory (5.1 – 5.7) covering the Shared Responsibility Model, Amazon Cognito authentication service, multi-account management with AWS Organizations, encryption key management with KMS, and security monitoring with AWS Security Hub.
+* Capable of building Serverless applications, integrating Lambda with S3, DynamoDB, and configuring the Frontend to call APIs via API Gateway.
 
-* Practiced and deployed a containerized application using Amazon Lightsail Containers and deployed a simple virtual server with Amazon Lightsail.
+* Deployed user authentication with Amazon Cognito, handled asynchronous messaging with SQS/SNS, and set up a CI/CD pipeline.
 
+* Successfully set up Serverless system monitoring with CloudWatch and X-Ray.
 
 
 

@@ -9,28 +9,30 @@ pre: " <b> 1.7. </b> "
 
 ### Week 7 Goals:
 
-* Complete Module 6 theory on cloud databases (Amazon RDS, Aurora, Redshift, ElastiCache).
-* Practice labs on Auto Scaling, CloudWatch, and begin ideating for the capstone project.
+* Master enterprise-grade container orchestration with AWS's comprehensive container service ecosystem, from lightweight container deployment to complex Kubernetes orchestration.
+* Learn to design, deploy, and manage containerized applications at scale using AWS ECS, EKS, and Fargate.  
+* Address real-world container challenges including service mesh, security, monitoring, and CI/CD pipeline integration.
 
-### Tasks to Be Completed This Week:
-| Day | Task                                                                                                                                          | Start Date   | End Date        |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| Mon | Complete Module 6 theory (Sections 6.1 - 6.3: Database Concepts Review, Amazon RDS & Amazon Aurora, Redshift, ElastiCache).                  | 16/06/2026   | 16/06/2026      |
-| Tue | Practice lab: Scaling Applications with EC2 Auto Scaling.                                                                                     | 17/06/2026   | 17/06/2026      |
-| Wed | Practice lab: Monitoring with Amazon CloudWatch.                                                                                              | 18/06/2026   | 18/06/2026      |
-| Thu | Begin ideating for the capstone project.                                                                                                      | 19/06/2026   | 19/06/2026      |
-| Fri | Design and draw the architecture diagram for the capstone project.                                                                            | 20/06/2026   | 20/06/2026      |
+### Tasks to Complete This Week:
+| Day | Tasks                                                                                                                                                                                                                              | Start Date   | End Date        | Reference                                              |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ------------------------------------------------------ |
+| 2   | - Study and do Lab: <br>&emsp; + Optimize container image size and manage registries <br>&emsp; + Configure and run a container application on Amazon Lightsail Containers <br>                                                      | 15/06/2026   | 15/06/2026      | https://cloudjourney.awsstudygroup.com/vi/5-container/ |
+| 3   | - Study and do Lab: <br>&emsp; + Amazon ECS & Monolith to Microservices Migration <br>&emsp; + Use Docker combined with AWS Fargate to run and auto-scale containers in a serverless model <br>&emsp; + Configure Task Definitions, set up services, and manage clusters on Amazon ECS in detail <br> | 16/06/2026   | 16/06/2026      | https://cloudjourney.awsstudygroup.com/vi/5-container/ |
+| 4   | - Practice initializing and setting up a standard Kubernetes cluster on AWS using Amazon EKS <br> - Practice configuring cluster networking, installing necessary add-ons, and deploying workloads (pods, deployments, services) to the EKS environment <br> | 17/06/2026   | 17/06/2026      | https://cloudjourney.awsstudygroup.com/vi/5-container/ |
+| 5   | - Study and do Lab: <br>&emsp; + Set up a fully automated CI/CD pipeline with AWS CodePipeline <br>&emsp; + Configure webhooks to link source code from a GitHub repository <br>                                                      | 18/06/2026   | 18/06/2026      | https://cloudjourney.awsstudygroup.com/vi/5-container/ |
+| 6   | - Study and do Lab: <br>&emsp; + Configure a Service Mesh system to manage traffic and encrypt communication between microservices <br>&emsp; + Set up runtime protection layers and assess the security compliance of the entire system <br> | 19/06/2026   | 19/06/2026      | https://cloudjourney.awsstudygroup.com/vi/5-container/ |
+
 
 ### Week 7 Results Achieved:
+* Mastered the fundamentals of running Docker in a cloud environment and optimized container images.
 
-* Mastered the theoretical content of Module 6 (6.1 – 6.3) covering a comparative study of database services (RDS, Aurora, Redshift, ElastiCache).
+* Successfully configured and managed container workloads on both Amazon ECS and Kubernetes (Amazon EKS) hands-on.
 
-* Completed the Scaling Applications with EC2 Auto Scaling lab, enabling the system to automatically scale resources up or down based on real traffic load.
+* Experienced firsthand the power of AWS Fargate in running containers without worrying about the underlying server infrastructure.
 
-* Completed the Monitoring with Amazon CloudWatch lab: successfully set up a performance metrics Dashboard and configured Alarm notifications for incident alerts.
+* Successfully set up a smooth CI/CD pipeline from GitHub directly to the EKS environment using CodePipeline.
 
-* Finalized the idea for the Chrono Genesis Game capstone project and completed the Serverless architecture system diagram on AWS.
-
+* Achieved enterprise security standards for containers through vulnerability scanning, runtime protection, and traffic management with Service Mesh.
 
 
 

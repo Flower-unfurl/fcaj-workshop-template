@@ -9,29 +9,31 @@ pre: " <b> 1.9. </b> "
 
 ### Week 9 Goals:
 
-* Practice advanced system administration labs with AWS Systems Manager and Directory Services.
-* Program the game logic (Game Engine, turn rules, deck definition, and 3 card types: Unit, Spell, Champion).
-* Build an interactive chessboard UI (displaying HP, Mana, cards, and stat information).
+* Harness the power of AI and machine learning with AWS's comprehensive AI/ML service suite.
+* Master pre-built AI services and develop, deploy, and manage custom ML models.
+* Gain end-to-end understanding of building ML use cases from feature engineering to Training, Tuning, and Deploying ML models in real-world environments via Amazon SageMaker.
 
-### Tasks to Be Completed This Week:
-| Day | Task                                                                                                                                                                                                                                                                                  | Start Date   | End Date        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| Mon | Practice labs: Directory Services, Building Highly Available Web Apps, and Serverless Automation with AWS Lambda.                                                                                                                                                                     | 30/06/2026   | 30/06/2026      |
-| Tue | Practice labs: Advanced Monitoring (CloudWatch & Grafana), CloudWatch Advanced Workshop, Resource Tags and Access Control.                                                                                                                                                            | 01/07/2026   | 01/07/2026      |
-| Wed | Practice lab: Systems Management with AWS Systems Manager and Session Manager.                                                                                                                                                                                                        | 02/07/2026   | 02/07/2026      |
-| Thu | Capstone project: <br> Build Rules and the engine to operate the core game components (turn, round, player). <br> Build the deck system including deck registration, deck definition, and templates related to decks and cards.                                                        | 03/07/2026   | 03/07/2026      |
-| Fri | Capstone project: <br> Build card types (3 types: Unit, Spell, Champion). <br> Build additional chessboard UI, player panel, deck display; show turn indicator, mana, Nexus HP, and card details (HP, Attack, description, image).                                                    | 04/07/2026   | 04/07/2026      |
+### Tasks to Complete This Week:
+| Day | Tasks                                                                                                                                                                                   | Start Date   | End Date        | Reference                                              |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ------------------------------------------------------ |
+| 2   | - Get an overview of the AI/ML service suite on AWS <br> - Study Computer Vision for image/video analysis, object detection and recognition <br> - Learn Natural Language Processing for text and sentiment analysis and language understanding <br> | 29/06/2026   | 29/06/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+| 3   | - Study and do Lab: <br>&emsp; + Set up the Amazon SageMaker environment <br>&emsp; + Migrate ML Workloads <br>                                                                          | 30/06/2026   | 30/06/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+| 4   | - Apply data preprocessing techniques and feature extraction on Amazon SageMaker <br> - Understand various AWS built-in algorithms and practice managing the end-to-end machine learning lifecycle <br> | 01/07/2026   | 01/07/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+| 5   | - Practice training, hyperparameter tuning, and deploying an XGBoost model to a real-world environment <br> - Practice deploying, monitoring, and integrating an ML model into a system <br> | 02/07/2026   | 02/07/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+| 6   | - Explore advanced SageMaker concepts such as Model Debugging, Model Monitoring, and AutoML <br>                                                                                         | 03/07/2026   | 03/07/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+
 
 ### Week 9 Results Achieved:
 
-* Completed hands-on labs covering Microsoft AD integration, building highly available applications, Lambda automation, Grafana and CloudWatch integration, and remote system administration via AWS Systems Manager Session Manager.
+* Explored and gained a thorough understanding of AWS's comprehensive AI/ML service suite, including foundation models and integrated AI services.
 
-* Programmed the core Game Engine to accurately execute game rules (rounds, turns, player management).
+* Completed the environment setup steps and successfully performed Feature Engineering on Amazon SageMaker.
 
-* Defined data structures and logic for 3 card types (Unit, Spell, Champion) along with the deck registration mechanism.
+* Independently completed the full Train, Tune, and Deploy pipeline for an XGBoost model ready for production.
 
-* Fully built the interactive chessboard UI: detailed display of card stats (HP, Attack, image, description), Mana bar, Nexus HP, and turn notifications.
+* Understood the strategy for migrating traditional ML workloads (Lift-and-Shift) to the cloud.
 
+* Equipped with knowledge of MLOps, model evaluation per the AWS ML Well-Architected lens, and responsible AI deployment principles.
 
 
 

@@ -26,12 +26,12 @@ The company culture is very positive: everyone respects each other, works seriou
 **6. Internship Policy / Benefits**  
 The company has very good support policies for interns, with flexible working hours. Being able to participate in internal training sessions and use the company's technology services is a very significant plus.
 
-
 ### Some Other Thoughts
+
 - The thing that satisfied me most during the internship was experiencing an open and modern work environment. In particular, I greatly valued the dedicated guidance from experienced mentors. The practical knowledge and perspectives they shared not only helped me complete my tasks well but also greatly expanded my professional thinking.
 - I would recommend this internship to friends. It is an ideal environment for IT students to gain real-world experience, develop proactivity, and learn the proper work processes of a major technology company.
 
-
 ### Suggestions & Wishes
-* I would like to have more periodic 1-on-1 review sessions (every 2 weeks) between mentors and interns, to be able to assess progress and adjust work direction in a more timely manner.
-* I very much hope to be able to continue this program after I graduate.
+
+- I would like to have more periodic 1-on-1 review sessions (every 2 weeks) between mentors and interns, to be able to assess progress and adjust work direction in a more timely manner.
+- I very much hope to be able to continue this program after I graduate.

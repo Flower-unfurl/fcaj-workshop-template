@@ -8,31 +8,24 @@ pre: " <b> 1.12 </b> "
 
 ### Week 12 Goals:
 
-* Configure SQS combined with CloudWatch and AWS X-Ray for monitoring, tracing, and asynchronous processing of match data.
-* Build and test the complete API Gateway system (Routes: $connect, $disconnect, game-action, matchfinding, ...).
-* Fully deploy the project on AWS Amplify Hosting, configure an automated CI/CD pipeline, and finalize the internship report.
+* Conduct a comprehensive review, find and fix bugs, and measure actual latency to optimize system performance.
+* Package the source code, finalize technical documentation and a summary report, and officially hand over the Chrono Genesis Game project.
 
-### Tasks to Be Completed This Week:
-| Day | Task                                                                                                                                                                           | Start Date   | End Date        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- |
-| Mon | Set up SQS trigger to Lambda Post Match Worker. <br> Set up CloudWatch (logs, metrics, errors, latency) and X-Ray to trace the request flow.                                  | 21/07/2026   | 21/07/2026      |
-| Tue | Finalize Lambda Post Match Worker to process data flow from SQS into DynamoDB. <br> Test Lambda functions via Test Events.                                                    | 22/07/2026   | 22/07/2026      |
-| Wed | Build API Gateway with routes ($connect, $disconnect, matchfinding-start, game-action, game-timeout, game-surrender, deck-save).                                              | 23/07/2026   | 23/07/2026      |
-| Thu | Enable Lambda proxy integration for all routes (set to true). <br> Test all API routes using Postman.                                                                         | 24/07/2026   | 24/07/2026      |
-| Fri | Deploy the project on AWS Amplify Hosting and fine-tune CI/CD. <br> Improve the user interface for a smoother experience and finalize the internship report.                  | 25/07/2026   | 25/07/2026      |
+### Tasks to Complete This Week:
+| Day | Tasks                                                                                                                                                            | Start Date   | End Date        | Reference |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | --------- |
+| 2   | - Complete and re-test all features. <br>                                                                                                                         | 20/07/2026   | 20/07/2026      |           |
+| 3   | - Finalize the End Match flow <br>                                                                                                                                | 21/07/2026   | 21/07/2026      |           |
+| 4   | - Complete the post-match flow <br> - Ensure data integrity                                                                                                       | 22/07/2026   | 22/07/2026      |           |
+| 5   | - Comprehensive testing <br>                                                                                                                                      | 23/07/2026   | 23/07/2026      |           |
+| 6   | - Feature acceptance testing & Data security <br> - Package the project & Submit the project <br>                                                                 | 24/07/2026   | 24/07/2026      |           |
+
 
 ### Week 12 Results Achieved:
 
-* Built an efficient asynchronous processing pipeline: used SQS to receive data from the Lambda End Match function and hand it off to the Lambda Post Match Worker for gradual DynamoDB writes, effectively resolving network congestion or server crashes when multiple matches end simultaneously.
+* Completed the full End-to-End testing process for the project, confirming that the real-time WebSocket connection flow operates stably and meets optimal latency requirements (measured and traced in real-time via Amazon CloudWatch and AWS X-Ray). 
 
-* Integrated CloudWatch to collect comprehensive logs, metrics, error rates, and Lambda function latency; integrated AWS X-Ray to trace the complete request flow through API Gateway and Lambda for rapid error diagnosis.
-
-* Successfully initialized and configured all Routes on the WebSocket API Gateway, enabled Lambda proxy integration, and successfully tested all scenarios using Postman.
-
-* Deployed the complete Frontend/Backend project on AWS Amplify Hosting and established an automated CI/CD pipeline that updates upon each code push.
-
-* Optimized the entire user interface, ensured the system operates smoothly and stably, and completed the final internship report.
-
+* Successfully summarized and packaged the Chrono Genesis Game project, submitting all source code along with the technical architecture documentation.
 
 
 

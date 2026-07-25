@@ -9,26 +9,31 @@ pre: " <b> 1.2. </b> "
 
 ### Mục tiêu tuần 2:
 
-* Khởi tạo tài khoản AWS và hoàn thành 5 nhiệm vụ cơ bản làm quen với dịch vụ Cloud (EC2, Bedrock, RDS, Lambda, Billing).
-* Thiết lập cơ chế tự động cảnh báo chi phí tài nguyên nhằm tối ưu hóa ngân sách tài khoản.
-* Tìm hiểu các mô hình kiến trúc phổ biến (Simple Web App, Serverless App) và hoàn thành lý thuyết Module 1.
+* Tìm hiểu giải pháp lưu trữ, triển khai cơ sở dữ liệu trên cloud.
+* Nắm vững cách tối ưu chi phí tính toán và tự động mở rộng quy mô hệ thống.
+* Hoàn thiện framework giám sát và thiết lập hệ thống mạng lai (hybrid DNS).
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                              | Ngày bắt đầu | Ngày hoàn thành |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- |
-| 2   | Lên văn phòng làm việc lần 1. <br> Đăng ký tài khoản AWS và thực hiện 2 task làm quen công cụ: EC2, Amazon Bedrock.                                                                                        | 12/05/2026   | 12/05/2026      |
-| 3   | Thực hiện 3 task làm quen công cụ AWS còn lại: Aurora & RDS, Lambda, Billing & Cost Management.                                                                                                       | 13/05/2026   | 13/05/2026      |
-| 4   | Thiết lập cảnh báo chi phí tiêu hao tối ưu (nhận email khi vượt mức). <br> Tìm hiểu kiến trúc Simple Web Application (EC2, Amazon RDS DB instance, CloudFront).                                           | 14/05/2026   | 14/05/2026      |
-| 5   | Tìm hiểu kiến trúc Serverless Application (CloudFront, Amplify, Amazon Bedrock, Lambda, DynamoDB). <br> Xem các video lý thuyết Module 1 (1.1 đến 1.4: Điện toán đám mây, AWS, Hạ tầng toàn cầu).        | 15/05/2026   | 15/05/2026      |
-| 6   | Hoàn thành video lý thuyết Module 1 còn lại (1.5 đến 1.7: Công cụ quản lý, Tối ưu chi phí, AWS Support, thực hành bổ sung).                                                                          | 16/05/2026   | 16/05/2026      |
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Tìm hiểu và làm Lab: <br>&emsp; + Sử dụng Cloud IDE trên trình duyệt với AWS Cloud9 <br>&emsp; + Hosting static website với Amazon S3 <br> | 11/05/2026   | 11/05/2026      | <https://cloudjourney.awsstudygroup.com/vi/1-explore/> |
+| 3   | - Tìm hiểu và làm Lab: Tạo cơ sở dữ liệu trên Amazon RDS <br>                                            | 12/05/2026   | 12/05/2026      | <https://cloudjourney.awsstudygroup.com/vi/1-explore/> |
+| 4   | - Tìm hiểu và làm Lab: Tối ưu chi phí tính toán với Amazon Lightsail <br> | 13/05/2026   | 13/05/2026      | <https://cloudjourney.awsstudygroup.com/vi/1-explore/> |
+| 5   | - Tim hiểu và làm Lab: Tạo bảng theo dõi hệ thống với Amazon Cloudwatch   <br>                  | 14/05/2026   | 15/05/2026      | <https://cloudjourney.awsstudygroup.com/vi/1-explore/> |
+| 6   | - Thực hành thiết lập hệ thống DNS hybrid tích hợp giữa môi trường Local và Amazon VPC với Amazon Route53 <br>                                                                                        | 15/05/2026   | 15/05/2026      | <https://cloudjourney.awsstudygroup.com/vi/1-explore/> |
+
 
 ### Kết quả đạt được tuần 2:
 
-* Khởi tạo thành công tài khoản AWS cá nhân đạt tiêu chuẩn an toàn.
+* Cấu hình và sử dụng thành thạo môi trường lập trình trực tuyến AWS Cloud9.
 
-* Hoàn thành 5 task thực hành trên các dịch vụ: EC2, Amazon Bedrock, Aurora & RDS, Lambda, Billing.
+* Triển khai thành công trang web tĩnh bằng dịch vụ lưu trữ Amazon S3.
 
-* Thiết lập thành công cơ chế tự động gửi email cảnh báo khi chi phí tiêu hao vượt ngưỡng quy định, giúp kiểm soát tốt ngân sách tài khoản.
+* Thiết lập và kết nối thành công với cơ sở dữ liệu quan hệ Amazon RDS.
 
-* Phân tích và hiểu rõ 2 mô hình kiến trúc tiêu chuẩn: Simple Web Application và Serverless Application.
+* Hiểu và so sánh được ưu nhược điểm, chi phí khi sử dụng Amazon Lightsail so với EC2.
+
+* Cấu hình thành công nhóm Auto Scaling để hệ thống tự động co giãn tùy theo lượng truy cập.
+
+* Xây dựng được dashboard giám sát tài nguyên bằng CloudWatch và cấu hình phân giải tên miền với Route53.
 

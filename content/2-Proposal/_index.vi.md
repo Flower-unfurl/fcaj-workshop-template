@@ -18,13 +18,13 @@ Toàn bộ game sử dụng WebSocket để đồng bộ dữ liệu theo thời
 
 ### 2. Tuyên bố vấn đề
 
-_Vấn đề hiện tại_
+**_Vấn đề hiện tại_**
 
 - Các hệ thống game thời gian thực truyền thống yêu cầu chi phí duy trì máy chủ liên tục dù không có người chơi.
 
 - Độ trễ mạng ảnh hưởng tiêu cực đến trải nghiệm của tựa game mang tính chiến thuật tính toán liên tục.
 
-_Giải pháp_  
+**_Giải pháp_**
 Triển khai Serverless Real-time Architecture qua Amazon API Gateway (WebSocket API) và các hàm AWS Lambda để tạo luồng xử lý độc lập. Quy về một luồng Game Engine duy nhất tương tác trực tiếp với Amazon DynamoDB để cập nhật trạng thái, đảm bảo độ trễ và tiết kiệm chi phí.
 
 ### 3. Kiến trúc giải pháp
@@ -35,31 +35,51 @@ Các kết nối thời gian thực hai chiều (Real-time WebSocket) được �
 
 Dữ liệu trò chơi và thông tin kết nối được lưu trữ tại Amazon DynamoDB. Ngoài ra, sau khi kết thúc trận đấu, các sự kiện được đẩy vào Amazon SQS để hàm Lambda (Post Match Worker) xử lý bất đồng bộ các tác vụ cập nhật Rank, EXP và lưu lịch sử trận đấu, đảm bảo hệ thống đạt hiệu năng cao và độ trễ cực thấp.
 
-![IoT Weather Station Architecture](/images/2-Proposal/ar2.png)
+![Architecture](/images/2-Proposal/arch.png)
 
-_Dịch vụ AWS sử dụng_
+**_Dịch vụ AWS sử dụng_**
 
-- _AWS Amplify_: Lưu trữ và phân phối giao diện web game (React/TypeScript), tự động hóa CI/CD.
+- _AWS Amplify_: Lưu trữ (hosting) và phân phối giao diện web game (Frontend).
 
-- _AWS Lambda_: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).
+- _Amazon Route 53_: Dịch vụ DNS quản lý tên miền, định tuyến lưu lượng người chơi (Players) truy cập vào ứng dụng.
 
-- _Amazon Route 53_: Giao tiếp với ứng dụng web.
+- _Amazon Cognito_: Quản lý định danh, xác thực người chơi và cấp phát, kiểm chứng JWT Token (JWT Verification).
 
-- _Amazon S3_: Quản lý tên miền và định tuyến lưu lượng truy cập của người chơi đến ứng dụng.
+- _Amazon API Gateway (HTTP & WebSocket)_:
 
-- _Amazon Cognito_: Xác thực danh tính người chơi, quản lý phiên đăng nhập và cấp phát JWT Token.
+  - _HTTP API_: Tiếp nhận và xử lý các yêu cầu RESTful từ client, sau khi đi qua bước xác thực JWT sẽ gọi tới các Lambda HTTP backend.
 
-- _Amazon API Gateway (WebSocket API)_: Quản lý kết nối thời gian thực hai chiều (real-time) giữa Client và Server.
+  - _WebSocket API_: Quản lý kết nối thời gian thực hai chiều (real-time) liên tục giữa người chơi và máy chủ game.
 
-- _AWS Lambda_: Xử lý game logic tập trung và các tác vụ tính toán.
+- _AWS Lambda_: Đóng vai trò xử lý logic cốt lõi, được chia thành nhiều nhóm chức năng độc lập:
 
-- _Amazon SQS_: Hàng đợi bất đồng bộ nhận dữ liệu từ Lambda Engine và xử lý.
+  - _HTTP Backend (chrono-http-backend)_: Xử lý các tác vụ quản lý như Deck (bộ bài/trang bị), Leaderboard (bảng xếp hạng), Rank và Match.
 
-- _Amazon DynamoDB_: Cơ sở dữ liệu NoSQL lưu trữ trạng thái trận đấu, kết nối và dữ liệu người dùng.
+  - _WebSocket Handlers_: Xử lý vòng đời kết nối và logic trận đấu gồm: ConnectHandler, DisconnectHandler, Start Match, Process Game Engine, Cancel Match, và End Match.
 
-- _Security & Monitoring (IAM, KMS, Secrets Manager, CloudWatch, X-Ray)_: Bảo mật phân quyền, quản lý khóa theo dõi nhật ký và giám sát hiệu năng hệ thống.
+  - _Background Workers_: Handle Timeout (xử lý logic khi hết thời gian) và Post Match Worker (cập nhật kết quả sau khi trận đấu kết thúc).
 
-_Thiết kế thành phần_
+  - _Scheduled Task_: Hàm Rebuild Leaderboard-Rank dùng để tính toán và cập nhật lại bảng xếp hạng.
+
+- _Amazon EventBridge (Schedule)_: Bộ định thời gian (Cronjob) tự động kích hoạt hàm Lambda Rebuild Leaderboard-Rank định kỳ mỗi 10 phút.
+
+- _Amazon SQS (Simple Queue Service)_: Hàng đợi thông điệp bất đồng bộ, bao gồm:
+
+  - _Delayed SQS_: Nằm giữa Process Game Engine và Handle Timeout để quản lý các sự kiện có độ trễ/đếm ngược trong game.
+
+  - _SQS Chuẩn_: Nhận dữ liệu từ hàm End Match và đẩy sang cho Post Match Worker xử lý, giúp giảm tải cho luồng chính.
+
+- _Amazon DynamoDB_: Cơ sở dữ liệu NoSQL tốc độ cao, bao gồm các bảng (tables) chuyên biệt để lưu trữ toàn bộ dữ liệu hệ thống: UserProfile, MatchHistory, GameState, GameLogs, và Connections.
+
+- _Security & Monitoring (Bảo mật và Giám sát)_:
+
+  - _IAM_: Kiểm soát truy cập và phân quyền tài nguyên.
+
+  - _KMS & Secrets Manager_: Quản lý khóa mã hóa và lưu trữ an toàn các dữ liệu nhạy cảm.
+
+  - _CloudWatch & X-Ray_: Lưu trữ nhật ký (logs), giám sát hiệu năng hệ thống và truy vết (tracing) các luồng request để tối ưu và gỡ lỗi.
+
+**_Thiết kế thành phần_**
 
 - _Định tuyến real-time_: Amazon API Gateway kết hợp Route 53 quản lý kết nối WebSocket hai chiều giữa người chơi và hệ thống.
 
@@ -75,7 +95,7 @@ _Thiết kế thành phần_
 
 ### 4. Triển khai kỹ thuật
 
-_Các giai đoạn triển khai_
+**_Các giai đoạn triển khai_**
 
 1. Khởi tạo hạ tầng: Triển khai môi trường, tên miền và thiết lập CI/CD thông qua AWS Amplify.
 
@@ -89,7 +109,7 @@ _Các giai đoạn triển khai_
 
 5. Kiểm thử & Tối ưu: Giám sát X-Ray, CloudWatch, tối ưu bảo mật với WAF/IAM và thực hiện kiểm thử tải (Stress Test).
 
-_Yêu cầu kỹ thuật_
+**_Yêu cầu kỹ thuật_**
 
 - _Hạ tầng hệ thống_: AWS Amplify (Hosting & CI/CD), GitHub, Route 53 (tên miền), IAM và VPC để triển khai, quản lý và bảo mật hệ thống.
 
@@ -105,43 +125,47 @@ _Yêu cầu kỹ thuật_
 
 ### 6. Ước tính ngân sách
 
-_Chi phí hạ tầng_
+**_Chi phí hạ tầng_**
 
-- AWS Amplify: 0,00 - 0,02 USD/tháng (Hosting khoảng 500 MB, CI/CD vài lần triển khai, nằm trong Free Tier 12 tháng).
+- AWS Amplify: 0,00 - 0,02 USD/tháng (Hosting giao diện web Frontend, CI/CD tự động, nằm trong Free Tier 12 tháng).
 
-- Amazon Route 53: 0,50 USD/tháng (01 Hosted Zone, chưa tính phí tên miền).
+- Amazon Route 53: 0,50 USD/tháng (Duy trì 01 Hosted Zone định tuyến, chưa tính phí mua tên miền ban đầu).
 
-- Amazon Cognito: 0,00 USD/tháng (≤ 10 người dùng, nằm trong Free Tier MAU).
+- Amazon Cognito: 0,00 USD/tháng (Quản lý và xác thực người dùng, cấp JWT, giới hạn dưới 50.000 MAU nằm trong Free Tier).
 
-- Amazon API Gateway (WebSocket): 0,00 - 0,02 USD/tháng (~20.000 WebSocket messages và thời gian kết nối thấp, trong Free Tier).
+- Amazon API Gateway (HTTP & WebSocket): 0,00 - 0,02 USD/tháng (Bao gồm HTTP API cho các request RESTful và WebSocket API duy trì kết nối real-time. Khối lượng nhỏ ở mức MVP dư sức nằm dưới mốc 1 triệu requests/messages miễn phí).
 
-- AWS Lambda: 0,00 USD/tháng (~50.000 requests, 512 MB, dưới Free Tier 1 triệu requests và 400.000 GB-s).
+- AWS Lambda: 0,00 USD/tháng (Dùng cho toàn bộ hệ thống tính toán: HTTP backend, Game Engine, các WebSocket Handlers, và Worker xử lý bất đồng bộ. Dưới 1 triệu requests và 400.000 GB-s của Free Tier).
 
-- Amazon DynamoDB: 0,00 USD/tháng (≈1 GB dữ liệu, chọn chế độ Provisioned 25 WCU/RCU để đạt 0 USD trong Free Tier).
+- Amazon EventBridge (Schedule): 0,00 USD/tháng (Lên lịch kích hoạt hàm Lambda Rebuild Leaderboard-Rank mỗi 10 phút, tương đương khoảng 4.320 sự kiện/tháng. Nằm trong mức 1 triệu sự kiện miễn phí).
 
-- Amazon SQS: 0,00 USD/tháng (~10.000 messages, dưới Free Tier).
+- Amazon SQS: 0,00 USD/tháng (Sử dụng 02 hàng đợi: Delayed SQS cho các sự kiện đếm ngược và SQS tiêu chuẩn cho Post Match Worker. Khối lượng message thấp, hoàn toàn miễn phí dưới ngưỡng 1 triệu requests).
 
-- Amazon CloudWatch: 0,00 USD/tháng (≈1 GB log lưu trữ, dưới ngưỡng 5 GB miễn phí/tháng).
+- Amazon DynamoDB: 0,00 USD/tháng (Dành cho 5 bảng dữ liệu: UserProfile, MatchHistory, GameState, GameLogs, Connections. Cần cấu hình chế độ Provisioned với tổng công suất dưới 25 WCU và 25 RCU cho tất cả các bảng để đạt 0 USD trong Free Tier).
 
-- AWS X-Ray: 0,00 USD/tháng (khối lượng trace thấp, trong Free Tier).
+- _Bảo mật & Giám sát (Security & Monitoring)_:
 
-- AWS KMS: 0,00 USD/tháng (sử dụng khóa do AWS quản lý).
+  - AWS IAM: 0,00 USD/tháng (Quản lý phân quyền luôn luôn miễn phí).
 
-- AWS Systems Manager Parameter Store: 0,00 USD/tháng (Thay thế Secrets Manager để lưu 01 Secret hoàn toàn miễn phí).
+  - AWS KMS: 0,00 USD/tháng (Nếu sử dụng các khóa mã hóa do AWS quản lý).
 
-- Truyền dữ liệu Internet: 0,00 USD/tháng (~1 GB Data Transfer Out, dưới ngưỡng 100 GB miễn phí/tháng).
+  - AWS Secrets Manager: ~0,40 USD/tháng.
 
-- AWS WAF: 0,00 USD/tháng (nếu tạm tắt) / ≥ 5,00 USD/tháng (nếu bật 01 Web ACL để lọc các request độc hại)
+  - Amazon CloudWatch & AWS X-Ray: 0,00 USD/tháng (Giám sát, lưu log và tracing luồng dữ liệu, dưới ngưỡng 5 GB log miễn phí/tháng).
 
-_Tổng chi phí_:
+- Truyền dữ liệu Internet (Data Transfer Out): 0,00 USD/tháng (Dưới ngưỡng 100 GB miễn phí/tháng).
 
-- Chi phí hạ tầng MVP (Chưa tính WAF): khoảng 0,54 USD/tháng (~6,5 USD/năm).
+- AWS WAF (Tùy chọn): 0,00 USD/tháng (nếu không dùng) / ≥ 5,00 USD/tháng (nếu bật 01 Web ACL để bảo vệ API Gateway khỏi các request độc hại).
 
-- Chi phí hạ tầng MVP (Có WAF): khoảng 5,54 USD/tháng (~66,5 USD/năm).
+**_Tổng chi phí dự kiến_**:
+
+- Chi phí hạ tầng MVP (Chưa tính WAF): Khoảng 0,92 - 0,94 USD/tháng (~11 USD/năm).
+
+- Chi phí hạ tầng MVP (Có WAF): Khoảng 5,94 USD/tháng (~71 USD/năm).
 
 ### 7. Đánh giá rủi ro
 
-_Ma trận rủi ro_
+**_Ma trận rủi ro_**
 
 - Lambda Cold Start gây giật lag lượt đi đầu: Khả năng xảy ra trung bình, mức độ ảnh hưởng trung bình.
 
@@ -149,7 +173,7 @@ _Ma trận rủi ro_
 
 - Chạm giới hạn AWS Quota: Khả năng xảy ra thấp, mức độ ảnh hưởng rất cao.
 
-_Chiến lược giảm thiểu_
+**_Chiến lược giảm thiểu_**
 
 - Giảm thiểu Lambda Cold Start: Tối ưu thời gian khởi động bằng cách giảm kích thước package, tái sử dụng kết nối và chỉ cấu hình Provisioned Concurrency cho các Lambda xử lý thời gian thực (Process Game Engine) khi hệ thống có lưu lượng truy cập cao. Giải pháp này giúp giảm đáng kể độ trễ ở lượt đi đầu tiên nhưng vẫn tối ưu chi phí vận hành.
 
@@ -157,7 +181,7 @@ _Chiến lược giảm thiểu_
 
 - Giảm thiểu chạm giới hạn AWS Quota: Thiết lập CloudWatch Metrics và CloudWatch Alarms để giám sát số lượng kết nối WebSocket, Lambda Invocations và các tài nguyên quan trọng. Khi tài nguyên đạt khoảng 70–80% giới hạn, hệ thống gửi cảnh báo qua email để quản trị viên chủ động yêu cầu tăng hạn mức trước khi ảnh hưởng đến người dùng.
 
-_Kế hoạch dự phòng_
+**_Kế hoạch dự phòng_**
 
 - Mở rộng tài nguyên: Khi tài nguyên AWS tiệm cận Service Quota, quản trị viên yêu cầu tăng hạn mức và tạm thời giới hạn tạo trận đấu mới, ưu tiên tài nguyên cho các trận đang diễn ra nhằm đảm bảo tính ổn định của hệ thống.
 

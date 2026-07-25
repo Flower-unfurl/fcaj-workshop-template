@@ -9,30 +9,30 @@ pre: " <b> 1.9. </b> "
 
 ### Mục tiêu tuần 9:
 
-* Thực hành bài lab quản trị hệ thống nâng cao với AWS Systems Manager và Directory Services.
-* Lập trình logic cho game (Game Engine, quy tắc lượt chơi, định nghĩa bộ bài và 3 loại thẻ bài: Unit, Spell, Champion).
-* Xây dựng giao diện bàn cờ tương tác (hiển thị HP, Mana, thẻ bài, thông tin chỉ số).
+* Khai thác sức mạnh của AI và machine learning với bộ dịch vụ AI/ML toàn diện của AWS.
+* Thành thạo các dịch vụ AI được xây dựng sẵn và phát triển, triển khai, quản lý mô hình ML tùy chỉnh.
+* Nắm bắt từ đầu đến cuối về việc xây dựng các trường hợp sử dụng ML từ feature engineering đến Training, Tuning và Deploy mô hình ML trong môi trường thực tế thông qua Amazon SageMaker
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                                                                                                            | Ngày bắt đầu | Ngày hoàn thành |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- |
-| 2   | Thực hành lab Directory Services, Building Highly Available Web Apps và Serverless Automation with AWS Lambda.                                                                                                                                                                       | 30/06/2026   | 30/06/2026      |
-| 3   | Thực hành lab Advanced Monitoring (CloudWatch & Grafana), CloudWatch Advanced Workshop, Resource Tags và Access Control.                                                                                                                                                             | 01/07/2026   | 01/07/2026      |
-| 4   | Thực hành lab Systems Management with AWS Systems Manager và Session Manager.                                                                                                                                                                                                        | 02/07/2026   | 02/07/2026      |
-| 5   | Đồ án cuối kỳ: <br> Xây dựng Rule, engine để vận hành các thành phần cốt lõi của trò chơi (turn, round, player). <br> Xây dựng bộ bài bao gồm đăng kí bộ bài, định nghĩa bộ bài, khuôn mẫu liên quan đến bộ và thẻ bài.                                                           | 03/07/2026   | 03/07/2026      |
-| 6   | Đồ án cuối kỳ: <br> Xây dựng loại thẻ bài (gồm 3 loại: Unit, Spell, Champion). <br> Xây dựng bổ sung giao diện bàn cờ, player, bộ bài; hiển thị lượt, mana, HP của Nexus và thông tin lá bài (HP, Attack, mô tả, hình ảnh).                                                       | 04/07/2026   | 04/07/2026      |
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Tìm hiểu tổng quan bộ dịch vụ AI/ML trên AWS <br> - Nghiên cứu Computer Vision để phân tích hình ảnh, video, phát hiện và nhận dạng đối tượng <br> - Tìm hiểu Natural Language Processing để phân tích văn bản, cảm xúc và hiểu ngôn ngữ <br>                                         | 29/06/2026   | 29/06/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+| 3   | - Tìm hiểu và làm Lab: <br>&emsp; + Chuẩn bị môi trường Amazon SageMaker <br>&emsp; + Dịch chuyển ML Workload <br>                                         | 30/06/2026   | 30/06/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+| 4   | - Áp dụng các kỹ thuật tiền xử lý dữ liệu và trích xuất đặc trưng trên Amazon SageMaker <br> - Hiểu các thuật toán tích hợp khác nhau của AWS và thực hành quản lý vòng đời machine learning end-to-end <br>                                             | 01/07/2026   | 01/07/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+| 5   | - Thực hành huấn luyện, tinh chỉnh siêu tham số và triển khai mô hình XGBoost vào môi trường thực tế <br> - Thực hành triển khai, giám sát và tích hợp mô hình ML vào hệ thống <br>                                            | 02/07/2026   | 02/07/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+| 6   | - Khám phá các khái niệm nâng cao trong SageMaker như Model Debugging, Model Monitoring và AutoML <br>                                            | 03/07/2026   | 03/07/2026      | https://cloudjourney.awsstudygroup.com/vi/7-aimlservice/ |
+
 
 ### Kết quả đạt được tuần 9:
 
-* Hoàn thành các bài lab thực hành về tích hợp Microsoft AD, xây dựng ứng dụng độ tin cậy cao, tự động hóa với Lambda, tích hợp Grafana với CloudWatch và quản trị hệ thống từ xa qua AWS Systems Manager Session Manager.
+* Khai thác và hiểu rõ được bộ dịch vụ AI/ML toàn diện của AWS, bao gồm các mô hình nền tảng và dịch vụ AI tích hợp.
 
-* Lập trình core Game Engine vận hành chính xác các quy tắc trò chơi (vòng đấu, lượt đấu, quản lý người chơi).
+* Hoàn thành các bước chuẩn bị môi trường và thực hiện thành công Feature Engineering trên nền tảng Amazon SageMaker.
 
-* Định nghĩa cấu trúc dữ liệu và logic cho 3 loại thẻ bài (Unit, Spell, Champion) cùng cơ chế đăng ký bộ bài.
+* Tự tay thực hiện toàn bộ quy trình Train, Tune và Deploy mô hình XGBoost sẵn sàng cho môi trường production.
 
-* Xây dựng hoàn chỉnh giao diện bàn cờ trực quan: hiển thị chi tiết chỉ số lá bài (HP, Attack, hình ảnh, mô tả), thanh Mana, điểm HP Nexus và thông báo lượt chơi.
+* Hiểu rõ chiến lược dịch chuyển khối lượng công việc ML truyền thống (Lift-and-Shift) lên đám mây.
 
-
-
+* Trang bị kiến thức về MLOps, đánh giá mô hình theo chuẩn AWS ML Well-architects lens và các nguyên tắc triển khai AI có trách nhiệm.
 
 

@@ -9,32 +9,29 @@ pre: " <b> 1.10. </b> "
 
 ### Mục tiêu tuần 10:
 
-* Thực hành các bài lab về Hạ tầng dưới dạng mã (CloudFormation, AWS CDK), Serverless API và Cognito Authentication.
-* Xây dựng hệ thống Mechanics/Effects xử lý logic trận đấu và thiết lập phân quyền IAM Role cho Lambda/SQS.
-* Thiết lập kết nối thời gian thực qua WebSocket hỗ trợ tính năng giao đấu trực tuyến giữa các người chơi.
+* Khởi tạo dự án Chrono Genesis Game (Web game đối kháng turn-base trading cards game).  
+* Hoàn thiện thiết kế kiến trúc Serverless Real-time Architecture trên nền tảng AWS và triển khai các lớp nền tảng (Edge, Auth, Data, Security)
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                     | Ngày bắt đầu | Ngày hoàn thành |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| 2   | Thực hành các bài lab: Infrastructure as Code with AWS CloudFormation, AWS CDK Essentials & Advanced.                                                                                        | 07/07/2026   | 07/07/2026      |
-| 3   | Lên văn phòng lần 4. <br> Thực hành các bài lab: Building Serverless APIs, Serverless Chat App, Serverless Backend và User Authentication with Amazon Cognito.                               | 08/07/2026   | 08/07/2026      |
-| 4   | Đồ án cuối kỳ: Xây dựng Mechanics (abilities, effect, triggers) và Operations (debuff, buff) xử lý logic trận đấu.                                                                           | 09/07/2026   | 09/07/2026      |
-| 5   | Đồ án cuối kỳ: Thiết lập IAM role cho Lambda và SQS.                                                                                                                                         | 10/07/2026   | 10/07/2026      |
-| 6   | Đồ án cuối kỳ: Xây dựng WebSocket hỗ trợ giao đấu trực tuyến (tìm trận thông qua mã phòng).                                                                                                 | 11/07/2026   | 11/07/2026      |
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Lên ý tưởng và vẽ sơ đồ kiến trúc Serverless Real-time cho Chrono Genesis Game <br>                                                                                             | 06/07/2026   | 06/07/2026      |
+| 3   | - Cấu hình Amazon Route 53 để quản lý tên miền và định tuyến người chơi truy cập vào hệ thống <br> - Tích hợp AWS WAF để lọc các request độc hại và bảo vệ hệ thống. <br> - Thiết lập AWS Amplify Hosting để lưu trữ tài nguyên tĩnh, tự động hóa CI/CD và phân phối giao diện React/TypeScript toàn cầu. <br>                 | 07/07/2026   | 07/07/2026      
+| 4   | - Cấu hình Amazon Cognito để quản lý tài khoản người chơi, xử lý đăng nhập và phát hành JWT Token. <br> - Khởi tạo Amazon API Gateway (WebSocket API) kết hợp Lambda Authorizer. | 08/07/2026   | 08/07/2026     
+| 5   | - Cấu hình 5 bảng chuyên biệt trên Amazon DynamoDB. <br>                  | 09/07/2026   | 10/07/2026      
+| 6   | - Sử dụng AWS IAM để thiết lập quyền truy cập giữa các dịch vụ và dùng AWS KMS để mã hóa dữ liệu lưu trên DynamoDB. <br> - Tích hợp AWS X-Ray để theo dõi toàn bộ luồng xử lý request giữa API Gateway và Lambda.                                                                                         | 10/07/2026   | 10/07/2026      
+
 
 ### Kết quả đạt được tuần 10:
 
-* Hoàn thành buổi làm việc onsite thứ 4 tại văn phòng AWS.
+* Hoàn thiện sơ đồ thiết kế tổng quan và phân lớp kiến trúc Serverless Real-time Architecture cho dự án Web game đối kháng (turn-base trading cards game) trên AWS.  
 
-* Thực hành các chuỗi bài lab hiện đại: triển khai hạ tầng tự động bằng CloudFormation, viết mã hạ tầng bằng AWS CDK, xây dựng Serverless Backend/API và tích hợp xác thực người dùng bằng Amazon Cognito.
+* Triển khai thành công lớp phân phối nội dung (Edge Layer) với Amazon Route 53, AWS WAF và AWS Amplify Hosting, đảm bảo phân phối giao diện React/TypeScript và tài nguyên tĩnh toàn cầu một cách tự động và an toàn.  
 
-* Lập trình hoàn chỉnh hệ thống Mechanics (kỹ năng, hiệu ứng, kích hoạt trigger) và Operations (buff, debuff) xử lý chính xác các kịch bản tương tác trong trận đấu.
+* Thiết lập hệ thống định danh người dùng bằng Amazon Cognito và cấu hình thành công Amazon API Gateway (WebSocket API) để duy trì kết nối thời gian thực bằng Connection ID.  
 
-* Phân quyền bảo mật IAM Role chính xác cho các dịch vụ Lambda và SQS.
-
-* Triển khai kết nối WebSocket hai chiều qua API Gateway, cho phép 2 người chơi ghép trận và giao đấu trực tuyến thông qua mã phòng.
-
-
- 
+* Khởi tạo thành công lớp lưu trữ dữ liệu trung tâm bằng Amazon DynamoDB với 5 bảng chuyên biệt đáp ứng yêu cầu đọc/ghi dữ liệu.
+  
+* Tích hợp thành công các dịch vụ bảo mật (IAM, KMS) để quản lý quyền và mã hóa dữ liệu, đồng thời thiết lập nền tảng giám sát với CloudWatch và X-Ray. 
 
 

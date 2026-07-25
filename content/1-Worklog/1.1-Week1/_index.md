@@ -8,22 +8,27 @@ pre: " <b> 1.1. </b> "
 
 ### Week 1 Goals:
 
-* Fully absorb the company's internship rules and regulations.
-* Research and complete the formation of the internship team; study an overview of the internship program framework.
+* Connect and get acquainted with members of First Cloud AI Journey.
+* Understand core AWS services and how to use the console & CLI.
+* Understand and deploy basic network architecture as well as foundational compute services.
 
-### Tasks to Be Completed This Week:
-| Day | Task                                                                                              | Start Date   | End Date        |
-| --- | ------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| Tue | Monitor announcements and absorb the rules and regulations of the internship program.             | 05/05/2026   | 05/05/2026      |
-| Wed | Research and proceed to form the internship team.                                                 | 06/05/2026   | 06/05/2026      |
-| Thu | Review and gain an overview of the content within the internship program.                         | 07/05/2026   | 07/05/2026      |
-| Fri | Research the general hands-on labs within the internship program.                                 | 08/05/2026   | 08/05/2026      |
+### Tasks to Complete This Week:
+| Day | Tasks                                                                                                                                                                                   | Start Date   | End Date        | Reference                                              |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ------------------------------------------------------ |
+| 3   | - Get acquainted with FCAJ members <br> - Read and note the rules and regulations of the internship organization                                                                         | 05/05/2026   | 05/05/2026      |
+| 4   | - Study AWS and its service categories <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                    | 06/05/2026   | 06/05/2026      | <https://cloudjourney.awsstudygroup.com/vi/1-explore/> |
+| 5   | - Create an AWS Free Tier account <br> - Learn AWS Console & AWS CLI <br> - Manage AWS usage costs with AWS Budgets <br>                                                                 | 07/05/2026   | 07/05/2026      | <https://cloudjourney.awsstudygroup.com/vi/1-explore/> |
+| 6   | - Study AWS IAM service <br> - Learn how to deploy network infrastructure with Amazon VPC <br> - Study and practice the EC2 Lab <br> - Use AWS CLI on Amazon EC2 instances <br>          | 08/05/2026   | 08/05/2026      | <https://cloudjourney.awsstudygroup.com/vi/1-explore/> |
 
 ### Week 1 Results Achieved:
 
-* Fully understood and complied with all workplace regulations, work rules, and communication culture in the AWS corporate environment.
+* Successfully created an AWS account and set up budget alerts (Budgets) to control costs.
 
-* Formed an internship team with members sharing common goals and clearly defined roles.
+* Clearly understood how AWS Support works.
 
-* Gained a thorough understanding of the entire training roadmap, learning outcomes, and progress evaluation methods of the internship program.
+* Successfully configured IAM policies, created Users/Groups, and attached IAM Roles to grant security permissions for applications.
+
+* Mastered the concepts and manually deployed a private virtual network infrastructure with Amazon VPC.
+
+* Successfully launched an Amazon EC2 virtual server and managed resources via the AWS CLI command line.
 

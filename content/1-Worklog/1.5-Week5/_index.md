@@ -9,26 +9,30 @@ pre: " <b> 1.5. </b> "
 
 ### Week 5 Goals:
 
-* Complete Module 4 theory on data storage solutions (S3, Static Website, CORS, Glacier, Snow Family, Backup).
-* Practice labs related to the Cloud9 development environment, S3 static website hosting, and Amazon RDS relational database.
+* Transform basic AWS deployments into robust, scalable, and cost-efficient solutions that meet enterprise standards.
+* Reliability: High availability, disaster recovery, and fault tolerance.
+* Performance: Auto-scaling, caching, and resource optimization.
+* Cost optimization: Right-sizing, reserved capacity, and spend analysis.
 
-### Tasks to Be Completed This Week:
-| Day | Task                                                                                                                                                 | Start Date   | End Date        |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| Mon | 2nd onsite visit to the office. <br> Complete Module 4 theory (Sections 4.1 & 4.2: Storage Services, Amazon S3, Access Point, Storage Class).        | 02/06/2026   | 02/06/2026      |
-| Tue | Complete Module 4 theory (Sections 4.3 & 4.4: S3 Static Website & CORS, Glacier, Snow Family, Storage Gateway, Backup).                             | 03/06/2026   | 03/06/2026      |
-| Wed | Practice lab: Cloud Development with AWS Cloud9.                                                                                                     | 04/06/2026   | 04/06/2026      |
-| Thu | Practice lab: Static Website Hosting with Amazon S3.                                                                                                 | 05/06/2026   | 05/06/2026      |
-| Fri | Practice lab: Database Essentials with Amazon Relational Database Service (RDS).                                                                     | 06/06/2026   | 06/06/2026      |
+### Tasks to Complete This Week:
+| Day | Tasks                                                                                                                                                                                                                                | Start Date   | End Date        | Reference                                              |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | ------------------------------------------------------ |
+| 2   | - Study and do Lab: <br>&emsp; + Deploy a system backup plan with AWS Backup <br>&emsp; + Connect VPCs with VPC Peering <br>&emsp; + Centrally manage connections with AWS Transit Gateway <br>                                        | 01/06/2026   | 01/06/2026      | https://cloudjourney.awsstudygroup.com/vi/3-optimize/ |
+| 3   | - Study and do Lab: <br>&emsp; + Leverage hands-on experience to deploy applications with Docker <br>&emsp; + Deploy an application to Amazon ECS <br>&emsp; + Automate application deployment with AWS CodePipeline <br>             | 02/06/2026   | 02/06/2026      | https://cloudjourney.awsstudygroup.com/vi/3-optimize/ |
+| 4   | - Study and do Lab: <br>&emsp; + Store unlimited data on AWS with File Storage Gateway <br>&emsp; + Deploy a shared Windows storage repository using FSx <br>                                                                          | 03/06/2026   | 03/06/2026      | https://cloudjourney.awsstudygroup.com/vi/3-optimize/ |
+| 5   | - Study and do Lab: <br>&emsp; + Build a Data Lake on AWS <br>&emsp; + Advanced architecture with Amazon DynamoDB <br>&emsp; + Optimize costs with Savings Plans, Reserved Instances, and Reserved DB Instances <br>                  | 04/06/2026   | 04/06/2026      | https://cloudjourney.awsstudygroup.com/vi/3-optimize/ |
+| 6   | - Study and do Lab: <br>&emsp; + Right-size servers with Amazon EC2 Resource Optimization <br>&emsp; + Visualize AWS usage costs <br>&emsp; + Advanced cost analysis with AWS Glue and Amazon Athena <br>                             | 05/06/2026   | 05/06/2026      | https://cloudjourney.awsstudygroup.com/vi/3-optimize/ |
+
 
 ### Week 5 Results Achieved:
 
-* Completed the 2nd onsite working session at the AWS office.
+* Successfully built a data backup strategy and complex interconnected network architecture with VPC Peering and Transit Gateway to improve reliability.
 
-* Mastered the theoretical knowledge of Module 4 on S3 storage classes, CORS configuration, Access Points, Glacier tiering, and Hybrid storage solutions (Snow Family, Storage Gateway).
+* Packaged, deployed, and automated the delivery pipeline of containerized applications using Docker, ECS, and CodePipeline.
 
-* Completed 3 hands-on labs: deployed a coding environment on AWS Cloud9, configured static website hosting on Amazon S3, and provisioned/managed an Amazon RDS relational database.
+* Set up diverse high-performance data storage and management solutions (File Storage Gateway, FSx, Data Lake, DynamoDB).
 
+* Analyzed, visualized, and applied compute cost-saving strategies (Reserved, Savings Plans, Resource Optimization).
 
 
 

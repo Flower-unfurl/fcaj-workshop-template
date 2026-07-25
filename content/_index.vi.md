@@ -6,26 +6,22 @@ chapter: false
 ---
 
 # Báo cáo thực tập
-### Thông tin sinh viên:
-&emsp; **Họ và tên:** Dương Phúc Khang
+{{< student-card 
+  lang="vi"
+  title="Thông tin sinh viên"
+  badge="Hồ sơ sinh viên"
+  name="Dương Phúc Khang"
+  phone="0776199627"
+  email="oggykhang2004@gmail.com"
+  university="Trường Đại học Công Nghệ TP.HCM (HUTECH)"
+  major="Công nghệ thông tin"
+  class="22DTHC6"
+  company="Công ty TNHH Amazon Web Services Việt Nam"
+  position="Workforce Bootcamp - First Cloud AI Journey"
+  period="Từ ngày 05/05/2026 đến ngày 30/07/2026"
+  avatar="/images/avt.jpg"
+>}}
 
-&emsp; **Số điện thoại:** 0776199627
-
-&emsp; **Email:** oggykhang2004@gmail.com
-
-&emsp; **Trường:** Trường Đại học Công Nghệ TP.HCM (HUTECH)
-
-&emsp; **Ngành:** Công nghệ thông tin
-
-&emsp; **Lớp:** 22DTHC6
-
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Việt Nam
-
-&emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
-
-&emsp; **Thời gian thực tập:** Từ ngày 05/05/2026 đến ngày 30/07/2026
-
-![Ảnh đại diện của bạn](/images/avt.jpg)
 
 
 

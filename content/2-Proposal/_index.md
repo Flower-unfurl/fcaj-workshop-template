@@ -18,13 +18,13 @@ The entire game uses WebSocket to synchronize data in real time. Match business 
 
 ### 2. Problem Statement
 
-_Current Problems_
+**_Current Problems_**
 
 - Traditional real-time game systems require continuous server maintenance costs even when there are no players.
 
 - Network latency negatively impacts the experience of games that require constant tactical calculation.
 
-_Solution_  
+**_Solution_**  
 Deploy a Serverless Real-time Architecture via Amazon API Gateway (WebSocket API) and AWS Lambda functions to create independent processing flows. Converge to a single Game Engine flow that interacts directly with Amazon DynamoDB to update state, ensuring low latency and cost savings.
 
 ### 3. Solution Architecture
@@ -35,31 +35,51 @@ Real-time bidirectional connections (WebSocket) are routed through Amazon API Ga
 
 Game data and connection information are stored in Amazon DynamoDB. Additionally, after a match ends, events are pushed to Amazon SQS for a Lambda function (Post Match Worker) to asynchronously process tasks such as updating Rank, EXP, and saving match history, ensuring high performance and ultra-low latency.
 
-![IoT Weather Station Architecture](/images/2-Proposal/ar2.png)
+![Architecture](/images/2-Proposal/arch.png)
 
-_AWS Services Used_
+**_AWS Services Used_**
 
-- _AWS Amplify_: Hosts and distributes the web game interface (React/TypeScript), automates CI/CD.
+- _AWS Amplify_: Hosts and distributes the web game's frontend interface.
 
-- _AWS Lambda_: Processes data and triggers Glue jobs (2 functions).
+- _Amazon Route 53_: A DNS service that manages the domain name and routes player traffic to the application.
 
-- _Amazon Route 53_: Communicates with the web application.
+- _Amazon Cognito_: Manages player identity, handles authentication, and issues and verifies JWT Tokens (JWT Verification).
 
-- _Amazon S3_: Manages domain names and routes player traffic to the application.
+- _Amazon API Gateway (HTTP & WebSocket)_:
 
-- _Amazon Cognito_: Authenticates player identities, manages login sessions, and issues JWT Tokens.
+  - _HTTP API_: Receives and processes RESTful requests from the client; after passing through JWT verification, it invokes the Lambda HTTP backend functions.
 
-- _Amazon API Gateway (WebSocket API)_: Manages real-time bidirectional connections between the Client and Server.
+  - _WebSocket API_: Manages persistent, real-time bidirectional connections between players and the game server.
 
-- _AWS Lambda_: Handles centralized game logic and computation tasks.
+- _AWS Lambda_: Serves as the core logic processor, divided into multiple independent functional groups:
 
-- _Amazon SQS_: An asynchronous queue that receives data from the Lambda Engine and processes it.
+  - _HTTP Backend (chrono-http-backend)_: Handles management tasks such as Deck, Leaderboard, Rank, and Match operations.
 
-- _Amazon DynamoDB_: A NoSQL database storing match state, connection information, and user data.
+  - _WebSocket Handlers_: Manages the connection lifecycle and match logic, including: ConnectHandler, DisconnectHandler, Start Match, Process Game Engine, Cancel Match, and End Match.
 
-- _Security & Monitoring (IAM, KMS, Secrets Manager, CloudWatch, X-Ray)_: Authorization security, key management, log tracking, and system performance monitoring.
+  - _Background Workers_: Handle Timeout (processes logic when time expires) and Post Match Worker (updates match results after a match concludes).
 
-_Component Design_
+  - _Scheduled Task_: The Rebuild Leaderboard-Rank function, used to recalculate and update the leaderboard rankings.
+
+- _Amazon EventBridge (Schedule)_: A scheduler (Cronjob) that automatically triggers the Rebuild Leaderboard-Rank Lambda function every 10 minutes.
+
+- _Amazon SQS (Simple Queue Service)_: An asynchronous message queue, comprising:
+
+  - _Delayed SQS_: Sits between Process Game Engine and Handle Timeout to manage timed or countdown events within the game.
+
+  - _Standard SQS_: Receives data from the End Match function and forwards it to the Post Match Worker for processing, reducing load on the main execution flow.
+
+- _Amazon DynamoDB_: A high-performance NoSQL database containing dedicated tables for storing all system data: UserProfile, MatchHistory, GameState, GameLogs, and Connections.
+
+- _Security & Monitoring_:
+
+  - _IAM_: Controls access and manages resource permissions.
+
+  - _KMS & Secrets Manager_: Manages encryption keys and securely stores sensitive credentials.
+
+  - _CloudWatch & X-Ray_: Stores logs, monitors system performance, and traces request flows for optimization and debugging.
+
+**_Component Design_**
 
 - _Real-time routing_: Amazon API Gateway combined with Route 53 manages bidirectional WebSocket connections between players and the system.
 
@@ -75,7 +95,7 @@ _Component Design_
 
 ### 4. Technical Implementation
 
-_Deployment Phases_
+**_Deployment Phases_**
 
 1. Infrastructure initialization: Deploy the environment, domain, and set up CI/CD via AWS Amplify.
 
@@ -87,7 +107,7 @@ _Deployment Phases_
 
 5. Testing & Optimization: Monitor with X-Ray, CloudWatch, optimize security with WAF/IAM, and perform load testing (Stress Test).
 
-_Technical Requirements_
+**_Technical Requirements_**
 
 - _System Infrastructure_: AWS Amplify (Hosting & CI/CD), GitHub, Route 53 (domain), IAM and VPC for system deployment, management, and security.
 
@@ -103,43 +123,47 @@ _Technical Requirements_
 
 ### 6. Budget Estimate
 
-_Infrastructure Costs_
+**_Infrastructure Costs_**
 
-- AWS Amplify: $0.00 – $0.02/month (Hosting ~500 MB, CI/CD a few deployments, within 12-month Free Tier).
+- AWS Amplify: $0.00 – $0.02/month (Hosting the web game frontend interface with automated CI/CD, within the 12-month Free Tier).
 
-- Amazon Route 53: $0.50/month (01 Hosted Zone, excluding domain registration fee).
+- Amazon Route 53: $0.50/month (Maintaining 01 Hosted Zone for routing; excludes the initial domain registration fee).
 
-- Amazon Cognito: $0.00/month (≤ 10 users, within Free Tier MAU).
+- Amazon Cognito: $0.00/month (User management and authentication, JWT issuance; below the 50,000 MAU Free Tier limit).
 
-- Amazon API Gateway (WebSocket): $0.00 – $0.02/month (~20,000 WebSocket messages and low connection time, within Free Tier).
+- Amazon API Gateway (HTTP & WebSocket): $0.00 – $0.02/month (Covers both the HTTP API for RESTful requests and the WebSocket API for maintaining real-time connections. MVP-level traffic is well within the 1 million free requests/messages threshold).
 
-- AWS Lambda: $0.00/month (~50,000 requests, 512 MB, below Free Tier of 1 million requests and 400,000 GB-s).
+- AWS Lambda: $0.00/month (Powers the entire compute layer: HTTP backend, Game Engine, WebSocket Handlers, and asynchronous Worker functions. Stays below 1 million requests and 400,000 GB-s of the Free Tier).
 
-- Amazon DynamoDB: $0.00/month (≈1 GB data, Provisioned 25 WCU/RCU mode for $0 within Free Tier).
+- Amazon EventBridge (Schedule): $0.00/month (Schedules the Rebuild Leaderboard-Rank Lambda function to trigger every 10 minutes, generating approximately 4,320 events/month. Well within the 1 million free events allowance).
 
-- Amazon SQS: $0.00/month (~10,000 messages, below Free Tier).
+- Amazon SQS: $0.00/month (Uses 02 queues: a Delayed SQS for countdown game events and a Standard SQS for the Post Match Worker. Message volume is low and completely free below the 1 million requests threshold).
 
-- Amazon CloudWatch: $0.00/month (≈1 GB log storage, below 5 GB free/month threshold).
+- Amazon DynamoDB: $0.00/month (Supports 5 data tables: UserProfile, MatchHistory, GameState, GameLogs, and Connections. Must be configured in Provisioned mode with a combined capacity of under 25 WCU and 25 RCU across all tables to remain within the Free Tier).
 
-- AWS X-Ray: $0.00/month (low trace volume, within Free Tier).
+- _Security & Monitoring_:
 
-- AWS KMS: $0.00/month (using AWS-managed keys).
+  - AWS IAM: $0.00/month (Permission management is always free).
 
-- AWS Systems Manager Parameter Store: $0.00/month (Replaces Secrets Manager to store 01 Secret completely free).
+  - AWS KMS: $0.00/month (When using AWS-managed encryption keys).
 
-- Internet Data Transfer: $0.00/month (~1 GB Data Transfer Out, below 100 GB free/month threshold).
+  - AWS Secrets Manager: ~$0.40/month.
 
-- AWS WAF: $0.00/month (if disabled) / ≥ $5.00/month (if 01 Web ACL is enabled to filter malicious requests).
+  - Amazon CloudWatch & AWS X-Ray: $0.00/month (System monitoring, log storage, and request flow tracing; below the 5 GB free log threshold per month).
 
-_Total Cost_:
+- Internet Data Transfer Out: $0.00/month (Below the 100 GB free threshold per month).
 
-- MVP infrastructure cost (without WAF): approximately $0.54/month (~$6.50/year).
+- AWS WAF (Optional): $0.00/month (if not enabled) / ≥ $5.00/month (if 01 Web ACL is enabled to protect API Gateway from malicious requests).
 
-- MVP infrastructure cost (with WAF): approximately $5.54/month (~$66.50/year).
+**_Estimated Total Cost_**:
+
+- MVP infrastructure cost (without WAF): Approximately $0.92 – $0.94/month (~$11/year). 
+
+- MVP infrastructure cost (with WAF): Approximately $5.94/month (~$71/year).
 
 ### 7. Risk Assessment
 
-_Risk Matrix_
+**_Risk Matrix_**
 
 - Lambda Cold Start causing lag on the first turn: Medium likelihood, medium impact.
 
@@ -147,7 +171,7 @@ _Risk Matrix_
 
 - Hitting AWS Quota limits: Low likelihood, very high impact.
 
-_Mitigation Strategies_
+**_Mitigation Strategies_**
 
 - Mitigating Lambda Cold Start: Optimize startup time by reducing package size, reusing connections, and only configuring Provisioned Concurrency for real-time processing Lambdas (Process Game Engine) when the system has high traffic. This significantly reduces first-turn latency while still optimizing operational costs.
 
@@ -155,7 +179,7 @@ _Mitigation Strategies_
 
 - Mitigating AWS Quota limits: Set up CloudWatch Metrics and CloudWatch Alarms to monitor the number of WebSocket connections, Lambda Invocations, and critical resources. When resources reach approximately 70–80% of their limits, the system sends an email alert for administrators to proactively request limit increases before users are affected.
 
-_Contingency Plan_
+**_Contingency Plan_**  
 
 - Resource scaling: When AWS resources approach Service Quota limits, administrators request limit increases and temporarily restrict the creation of new matches, prioritizing resources for ongoing matches to ensure system stability.
 

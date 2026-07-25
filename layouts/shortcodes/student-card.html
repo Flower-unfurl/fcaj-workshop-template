@@ -1,0 +1,131 @@
+{{ $lang := .Get "lang" | default "en" }}
+{{ $title := .Get "title" | default "Student Information" }}
+{{ $badge := .Get "badge" | default "ENGINEER ID" }}
+{{ $name := .Get "name" | default "Duong Phuc Khang" }}
+{{ $phone := .Get "phone" | default "0776199627" }}
+{{ $email := .Get "email" | default "oggykhang2004@gmail.com" }}
+{{ $university := .Get "university" | default "Ho Chi Minh City University of Technology (HUTECH)" }}
+{{ $major := .Get "major" | default "Information Technology" }}
+{{ $class := .Get "class" | default "22DTHC6" }}
+{{ $company := .Get "company" | default "Amazon Web Services Vietnam Co., Ltd." }}
+{{ $position := .Get "position" | default "Workforce Bootcamp - First Cloud AI Journey" }}
+{{ $period := .Get "period" | default "From 05/05/2026 to 30/07/2026" }}
+{{ $avatar := .Get "avatar" | default "/images/avt.jpg" }}
+
+<div class="mechanic-card-outer">
+  <div class="mechanic-card-inner">
+    
+    <!-- Card Header -->
+    <div class="mechanic-card-header">
+      <h3 class="mechanic-card-title">
+        <i class="fas fa-cogs"></i> {{ $title }}
+      </h3>
+    </div>
+
+    <!-- 2-Column Main Card Body (Chia 2 Margin) -->
+    <div class="mechanic-card-body">
+      
+      <!-- Left Column: Student Details -->
+      <div class="mechanic-info-list">
+        
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-id-card"></i> {{ if eq $lang "vi" }}Họ và tên:{{ else }}Full Name:{{ end }}</span>
+          <span class="mechanic-value">{{ $name }}</span>
+        </div>
+
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-phone"></i> {{ if eq $lang "vi" }}Số điện thoại:{{ else }}Phone Number:{{ end }}</span>
+          <span class="mechanic-value mechanic-value-code"><i class="fas fa-phone"></i> {{ $phone }}</span>
+          
+        </div>
+
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-envelope"></i> Email:</span>
+          <span class="mechanic-value mechanic-value-code"><i class="fas fa-envelope"></i> {{ $email }}</span>
+        </div>
+
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-university"></i> {{ if eq $lang "vi" }}Trường:{{ else }}University:{{ end }}</span>
+          <span class="mechanic-value">{{ $university }}</span>
+        </div>
+
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-laptop-code"></i> {{ if eq $lang "vi" }}Ngành:{{ else }}Major:{{ end }}</span>
+          <span class="mechanic-value">{{ $major }}</span>
+        </div>
+
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-users"></i> {{ if eq $lang "vi" }}Lớp:{{ else }}Class:{{ end }}</span>
+          <span class="mechanic-value mechanic-value-code"><i class="fas fa-users"></i> {{ $class }}</span>
+        </div>
+
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-building"></i> {{ if eq $lang "vi" }}Công ty thực tập:{{ else }}Internship Company:{{ end }}</span>
+          <span class="mechanic-value">{{ $company }}</span>
+        </div>
+
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-user-tie"></i> {{ if eq $lang "vi" }}Vị trí thực tập:{{ else }}Internship Position:{{ end }}</span>
+          <span class="mechanic-value">{{ $position }}</span>
+        </div>
+
+        <div class="mechanic-info-item">
+          <span class="mechanic-label"><i class="fas fa-calendar-alt"></i> {{ if eq $lang "vi" }}Thời gian thực tập:{{ else }}Internship Period:{{ end }}</span>
+          <span class="mechanic-value mechanic-value-code">{{ $period }}</span>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Avatar Frame with 2 Rotating Mechanic Gears at Corners -->
+      <div class="mechanic-avatar-wrapper">
+        <div class="mechanic-avatar-card">
+          
+          <!-- Corner Screw Accents -->
+          <div class="mechanic-bolt tr"></div>
+          <div class="mechanic-bolt bl"></div>
+
+          <!-- Top-Left Rotating Gear SVG (Clockwise) -->
+          <svg class="mechanic-corner-gear top-left" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 22C34.536 22 22 34.536 22 50C22 65.464 34.536 78 50 78C65.464 78 78 65.464 78 50C78 34.536 65.464 22 50 22ZM50 64C42.268 64 36 57.732 36 50C36 42.268 42.268 36 50 36C57.732 36 64 42.268 64 50C64 57.732 57.732 64 50 64Z" fill="#64748b"/>
+            <!-- Teeth -->
+            <rect x="45" y="4" width="10" height="18" rx="2" fill="#475569"/>
+            <rect x="45" y="78" width="10" height="18" rx="2" fill="#475569"/>
+            <rect x="4" y="45" width="18" height="10" rx="2" fill="#475569"/>
+            <rect x="78" y="45" width="18" height="10" rx="2" fill="#475569"/>
+            <rect x="16.03" y="16.03" width="10" height="18" rx="2" transform="rotate(-45 16.03 16.03)" fill="#475569"/>
+            <rect x="68.5" y="68.5" width="10" height="18" rx="2" transform="rotate(-45 68.5 68.5)" fill="#475569"/>
+            <rect x="68.5" y="23.1" width="10" height="18" rx="2" transform="rotate(45 68.5 23.1)" fill="#475569"/>
+            <rect x="16.03" y="75.57" width="10" height="18" rx="2" transform="rotate(45 16.03 75.57)" fill="#475569"/>
+            <!-- Center Axle Pin -->
+            <circle cx="50" cy="50" r="6" fill="#94a3b8"/>
+          </svg>
+
+          <!-- Bottom-Right Rotating Gear SVG (Counter-Clockwise) -->
+          <svg class="mechanic-corner-gear bottom-right" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="30" stroke="#334155" stroke-width="8"/>
+            <circle cx="50" cy="50" r="14" fill="#64748b"/>
+            <circle cx="50" cy="50" r="5" fill="#cbd5e1"/>
+            <!-- Spokes -->
+            <line x1="50" y1="20" x2="50" y2="80" stroke="#475569" stroke-width="4"/>
+            <line x1="20" y1="50" x2="80" y2="50" stroke="#475569" stroke-width="4"/>
+            <!-- Outer Cog Teeth -->
+            <rect x="46" y="2" width="8" height="16" rx="2" fill="#334155"/>
+            <rect x="46" y="82" width="8" height="16" rx="2" fill="#334155"/>
+            <rect x="2" y="46" width="16" height="8" rx="2" fill="#334155"/>
+            <rect x="82" y="46" width="16" height="8" rx="2" fill="#334155"/>
+            <rect x="15" y="15" width="8" height="16" rx="2" transform="rotate(-45 15 15)" fill="#334155"/>
+            <rect x="71" y="71" width="8" height="16" rx="2" transform="rotate(-45 71 71)" fill="#334155"/>
+            <rect x="71" y="21" width="8" height="16" rx="2" transform="rotate(45 71 21)" fill="#334155"/>
+            <rect x="15" y="77" width="8" height="16" rx="2" transform="rotate(45 15 77)" fill="#334155"/>
+          </svg>
+
+          <!-- Avatar Image (Original Aspect Ratio) -->
+          <img src="{{ trim $avatar "/" | relURL }}" alt="{{ $name }}" class="mechanic-avatar-img">
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

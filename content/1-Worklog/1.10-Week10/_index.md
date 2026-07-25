@@ -9,31 +9,30 @@ pre: " <b> 1.10. </b> "
 
 ### Week 10 Goals:
 
-* Practice labs on Infrastructure as Code (CloudFormation, AWS CDK), Serverless API, and Cognito Authentication.
-* Build the Mechanics/Effects system to handle battle logic and configure IAM Role permissions for Lambda/SQS.
-* Establish real-time connections via WebSocket to support online player-vs-player battles.
+* Initiate the Chrono Genesis Game project (a turn-based trading card web game).  
+* Complete the Serverless Real-time Architecture design on AWS and deploy the foundational layers (Edge, Auth, Data, Security).
 
-### Tasks to Be Completed This Week:
-| Day | Task                                                                                                                                                                                           | Start Date   | End Date        |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| Mon | Practice labs: Infrastructure as Code with AWS CloudFormation, AWS CDK Essentials & Advanced.                                                                                                  | 07/07/2026   | 07/07/2026      |
-| Tue | 4th onsite visit to the office. <br> Practice labs: Building Serverless APIs, Serverless Chat App, Serverless Backend, and User Authentication with Amazon Cognito.                            | 08/07/2026   | 08/07/2026      |
-| Wed | Capstone project: Build Mechanics (abilities, effects, triggers) and Operations (debuff, buff) to handle battle logic.                                                                         | 09/07/2026   | 09/07/2026      |
-| Thu | Capstone project: Configure IAM roles for Lambda and SQS.                                                                                                                                      | 10/07/2026   | 10/07/2026      |
-| Fri | Capstone project: Build WebSocket support for online matchmaking (find matches via room code).                                                                                                  | 11/07/2026   | 11/07/2026      |
+### Tasks to Complete This Week:
+| Day | Tasks                                                                                                                                                                                   | Start Date   | End Date        | Reference |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | --------- |
+| 2   | - Brainstorm and draw the Serverless Real-time architecture diagram for Chrono Genesis Game <br>                                                                                         | 06/07/2026   | 06/07/2026      |           |
+| 3   | - Configure Amazon Route 53 to manage the domain and route player traffic to the system <br> - Integrate AWS WAF to filter malicious requests and protect the system. <br> - Set up AWS Amplify Hosting to store static assets, automate CI/CD, and globally distribute the React/TypeScript interface. <br> | 07/07/2026   | 07/07/2026      |           |
+| 4   | - Configure Amazon Cognito to manage player accounts, handle login, and issue JWT Tokens. <br> - Initialize Amazon API Gateway (WebSocket API) combined with a Lambda Authorizer.         | 08/07/2026   | 08/07/2026      |           |
+| 5   | - Configure 5 specialized tables on Amazon DynamoDB. <br>                                                                                                                                | 09/07/2026   | 10/07/2026      |           |
+| 6   | - Use AWS IAM to set up access permissions between services and AWS KMS to encrypt data stored on DynamoDB. <br> - Integrate AWS X-Ray to trace the entire request processing flow between API Gateway and Lambda. | 10/07/2026   | 10/07/2026      |           |
+
 
 ### Week 10 Results Achieved:
 
-* Completed the 4th onsite working session at the AWS office.
+* Completed the overall design diagram and layered Serverless Real-time Architecture for the turn-based trading card web game project on AWS.  
 
-* Practiced a series of modern labs: automated infrastructure deployment with CloudFormation, infrastructure-as-code with AWS CDK, building Serverless Backend/API, and integrating user authentication with Amazon Cognito.
+* Successfully deployed the content distribution layer (Edge Layer) with Amazon Route 53, AWS WAF, and AWS Amplify Hosting, ensuring the automatic and secure global distribution of the React/TypeScript interface and static assets.  
 
-* Fully programmed the Mechanics system (skills, effects, trigger activations) and Operations (buff, debuff) to accurately handle interaction scenarios during battles.
+* Established the user identity system with Amazon Cognito and successfully configured Amazon API Gateway (WebSocket API) to maintain real-time connections via Connection ID.  
 
-* Configured precise IAM Role permissions for Lambda and SQS services.
+* Successfully initialized the central data storage layer with Amazon DynamoDB using 5 specialized tables to meet read/write requirements.
+  
+* Successfully integrated security services (IAM, KMS) for permission management and data encryption, while establishing a monitoring foundation with CloudWatch and X-Ray. 
 
-* Deployed a two-way WebSocket connection via API Gateway, allowing 2 players to matchmake and battle online via room code.
 
-
- 
 

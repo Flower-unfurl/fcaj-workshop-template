@@ -9,27 +9,30 @@ pre: " <b> 1.8. </b> "
 
 ### Mục tiêu tuần 8:
 
-* Thực hành các bài lab chuyên sâu về Networking, NoSQL DynamoDB, ElastiCache, CloudFront và Edge Computing.
-* Bắt đầu triển khai dự án Web Game Chrono Genesis Game: thiết kế khung giao diện chính và xây dựng mô hình dữ liệu trên DynamoDB.
+* Xây dựng nền tảng dữ liệu quy mô doanh nghiệp bằng các dịch vụ phân tích và machine learning toàn diện của AWS.
+* Thiết kế và triển khai kiến trúc dữ liệu hiện đại, từ Data Lake đến các pipeline phân tích thời gian thực.
+* Thành thạo hành trình dữ liệu hoàn chỉnh: thu thập, xử lý, lưu trữ, phân tích và trực quan hóa với các mẫu kỹ thuật production-grade có khả năng mở rộng và tối ưu chi phí.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                        | Ngày bắt đầu | Ngày hoàn thành |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- |
-| 2   | Thực hành các bài lab: Hybrid DNS Management với Amazon Route 53 và Command Line Operations với AWS CLI.                                                                         | 23/06/2026   | 23/06/2026      |
-| 3   | Thực hành các bài lab: NoSQL Database Essentials với Amazon DynamoDB và In-Memory Caching với Amazon ElastiCache.                                                                | 24/06/2026   | 24/06/2026      |
-| 4   | Thực hành các bài lab: Networking on AWS Workshop và Content Delivery với Amazon CloudFront.                                                                                     | 25/06/2026   | 25/06/2026      |
-| 5   | Thực hành bài lab: Edge Computing với CloudFront & Lambda@Edge và Windows Workloads trên AWS.                                                                                    | 26/06/2026   | 26/06/2026      |
-| 6   | Triển khai đồ án cuối kỳ: Lên khung giao diện và thiết kế Database cho Web game Chrono Genesis Game (Game đánh bài theo lượt). <br> Tham gia FCAJ Community Day.           | 27/06/2026   | 27/06/2026      |
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Nghiên cứu phương pháp xây dựng Data Lake chuẩn trên AWS <br> - Thực hành thiết lập kho lưu trữ dữ liệu trên Amazon S3 <br> - Thực hành phân vùng và quản trị S3 <br>                                         | 22/06/2026   | 22/06/2026      | https://cloudjourney.awsstudygroup.com/vi/6-dataandanalytic/ |
+| 3   | - Thực hành Data Lake với dữ liệu thực tế <br> - Thiết lập framework bảo mật, giám sát mức độ tuân thủ và kiểm tra chất lượng dữ liệu đầu vào để đảm bảo tính toàn vẹn cho Data Lake <br>                                         | 23/06/2026   | 23/06/2026      | https://cloudjourney.awsstudygroup.com/vi/6-dataandanalytic/ |
+| 4   | - Tìm hiểu và làm Lab: <br>&emsp; + Xây dựng ETL/ELT Pipelines <br>&emsp; + Xử lý Batch và Streaming <br>                                           | 24/06/2026   | 24/06/2026      | https://cloudjourney.awsstudygroup.com/vi/6-dataandanalytic/ |
+| 5   | - Khám phá Dịch vụ Phân tích dữ liệu AWS <br> - Triển khai các mẫu Data Warehouse đám mây hiện đại, thiết lập luồng xử lý phân tích dữ liệu theo thời gian thực dựa trên kiến trúc event-driven <br>                                            | 25/06/2026   | 25/06/2026      | https://cloudjourney.awsstudygroup.com/vi/6-dataandanalytic/ |
+| 6   | - Tìm hiểu và làm Lab: <br>&emsp; + Kết nối nguồn dữ liệu đã qua xử lý từ Data Lake/Data Warehouse vào dịch vụ Amazon QuickSight <br>&emsp; + Trực quan hóa dữ liệu <br>                                            | 26/06/2026   | 26/06/2026      | https://cloudjourney.awsstudygroup.com/vi/6-dataandanalytic/ |
+
 
 ### Kết quả đạt được tuần 8:
 
-* Hoàn thành 8 bài lab thực hành chuyên sâu nâng cao: cấu hình DNS hỗn hợp với Route 53, thao tác lệnh AWS CLI, thao tác cơ sở dữ liệu NoSQL DynamoDB, tối ưu tốc độ đọc với ElastiCache, phân phối nội dung qua CloudFront CDN và thực thi code tại Edge Node (Lambda@Edge).
+* Xây dựng thành công Data Lake trên Amazon S3 và biết cách quản trị, phân vùng dữ liệu hiệu quả.
 
-* Dựng khung giao diện người dùng (UI) ban đầu và thiết kế hoàn chỉnh schema bảng dữ liệu trên Amazon DynamoDB cho dự án game đánh bài.
+* Đã tự tay đưa được dữ liệu từ hệ thống cơ sở dữ liệu quan hệ cá nhân lên đám mây và cấu hình các lớp bảo mật, kiểm soát chất lượng.
 
-* Tham gia tích cực sự kiện FCAJ Community Day để cập nhật các xu hướng công nghệ mới.
+* Vận hành trơn tru các pipeline ETL/ELT để tự động hóa việc xử lý cả dữ liệu tĩnh và dữ liệu luồng.
 
+* Ứng dụng thành thạo SQL vào các nền tảng phân tích hiện đại (Data Warehouse) trên AWS.
 
-
+* Hoàn thiện chu trình xử lý dữ liệu bằng cách xây dựng thành công các dashboard trực quan, báo cáo BI chuyên nghiệp với Amazon QuickSight.
 
 

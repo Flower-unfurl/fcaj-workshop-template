@@ -6,26 +6,22 @@ chapter: false
 ---
 
 # Internship Report
-### Student Information:
-&emsp; **Full Name:** Duong Phuc Khang
+{{< student-card 
+  lang="en"
+  title="Student Information"
+  badge="Verified Profile"
+  name="Duong Phuc Khang"
+  phone="0776199627"
+  email="oggykhang2004@gmail.com"
+  university="Ho Chi Minh City University of Technology (HUTECH)"
+  major="Information Technology"
+  class="22DTHC6"
+  company="Amazon Web Services Vietnam Co., Ltd."
+  position="Workforce Bootcamp - First Cloud AI Journey"
+  period="From 05/05/2026 to 30/07/2026"
+  avatar="/images/avt.jpg"
+>}}
 
-&emsp; **Phone Number:** 0776199627
-
-&emsp; **Email:** oggykhang2004@gmail.com
-
-&emsp; **University:** Ho Chi Minh City University of Technology (HUTECH)
-
-&emsp; **Major:** Information Technology
-
-&emsp; **Class:** 22DTHC6
-
-&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
-
-&emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
-
-&emsp; **Internship Period:** From 05/05/2026 to 30/07/2026
-
-![Profile Picture](/images/avt.jpg)
 
 
 

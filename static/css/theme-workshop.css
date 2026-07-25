@@ -544,6 +544,7 @@ body.sidebar-hidden #navigation a.nav-prev {
   border-radius: 6px;
   margin: 2px 8px;
   padding: 6px 12px;
+  display: block;
 }
 
 #sidebar a:hover {
@@ -558,6 +559,31 @@ body.sidebar-hidden #navigation a.nav-prev {
   font-weight: 600;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   transform: translateX(2px);
+}
+
+/* Sync parent & child menu backgrounds, removing the legacy purple/black color */
+#sidebar ul.topics > li.parent,
+#sidebar ul.topics > li.active {
+  background: rgba(15, 23, 42, 0.3) !important; /* Sleek navy tint synchronized with main background */
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: background 0.3s var(--SPRING-EASE);
+}
+
+/* Subtle indentation & list style for sub-menu items */
+#sidebar ul.topics ul {
+  padding-left: 0.5rem;
+}
+
+#sidebar ul.topics ul li a {
+  font-size: 0.92rem;
+  opacity: 0.85;
+}
+
+#sidebar ul.topics ul li a:hover {
+  opacity: 1;
 }
 
 #sidebar hr {
