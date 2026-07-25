@@ -168,7 +168,7 @@ Tại giao diện quản lý AWS Lambda, nhấn **Create function** và thực h
 
 **Mục đích kỹ thuật:** Tạo môi trường xử lý backend độc lập để tiếp nhận và phản hồi các HTTP Request tĩnh. Việc tái sử dụng role `Chrono-lambda-execution-role` đảm bảo hàm có đủ quyền truy cập đọc/ghi vào DynamoDB.
 
-![Tạo hàm chrono-http-backend](/images/5-Workshop/Lambda%20HTTP/1.png)
+![Tạo hàm chrono-http-backend](/images/5-Workshop/Lambda-HTTP/1.png)
 
 ---
 
@@ -180,7 +180,7 @@ Sau khi hàm `chrono-http-backend` được tạo thành công, tiến hành tri
 
 **Mục đích kỹ thuật:** Cung cấp mã nguồn thực thi và các cấu hình động bảo mật để hàm Lambda có thể xử lý các API RESTful và tương tác trơn tru với kho lưu trữ dữ liệu tập trung.
 
-![Cấu hình chrono-http-backend](/images/5-Workshop/Lambda%20HTTP/2.chrono-http-backend.png)
+![Cấu hình chrono-http-backend](/images/5-Workshop/Lambda-HTTP/2.chrono-http-backend.png)
 
 ---
 
