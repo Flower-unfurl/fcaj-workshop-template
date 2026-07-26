@@ -47,3 +47,14 @@ _Video giới thiệu cơ chế xử lí lỗi AFK/Treo game của CHRONO GENESI
 {{< youtube Tsjv_Fz_gPw>}}
 
 _Video full gameplay demo của trò chơi CHRONO GENESIS TCG._
+
+#### Xếp hạng toàn cầu và xếp hạng cá nhân
+
+![Xếp hạng toàn cầu và xếp hạng cá nhân](/images/8-Resources/1-rankGlobal.png)
+
+![Xếp hạng toàn cầu và xếp hạng cá nhân](/images/8-Resources/2-rankPersonal.png)
+
+#### Lịch sử đấu cá nhân
+
+![Lịch sử đấu cá nhân](/images/8-Resources/matchHistory.png)
+

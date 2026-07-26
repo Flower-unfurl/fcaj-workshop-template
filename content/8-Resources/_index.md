@@ -47,3 +47,13 @@ _Video introducing the AFK/Game freeze handling mechanism of CHRONO GENESIS TCG.
 {{< youtube Tsjv_Fz_gPw >}}
 
 _Full gameplay demo video of CHRONO GENESIS TCG._
+
+#### Global Rank and personal Rank
+
+![Global Rank and personal Rank](/images/8-Resources/1-rankGlobal.png)
+
+![Global Rank and personal Rank](/images/8-Resources/2-rankPersonal.png)
+
+#### Match History
+
+![matchHistory](/images/8-Resources/matchHistory.png)
